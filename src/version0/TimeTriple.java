@@ -4,7 +4,7 @@
  *		@date:		2/4/2016
  *		@purpose:	To make it easy to pass Hours, minutes and seconds while programmi
  */
-package verision0;
+package version0;
 
 public class TimeTriple 
 {

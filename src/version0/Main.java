@@ -4,7 +4,7 @@
  *		@date:		2/4/2016
  * 
  */
-package verision0;
+package version0;
 import java.util.Scanner;
 public class Main 
 {
