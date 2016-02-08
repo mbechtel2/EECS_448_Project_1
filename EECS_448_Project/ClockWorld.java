@@ -10,6 +10,7 @@ public class ClockWorld extends World
 {
     Clock mainClock = new Clock();
     Toggle24 toggle = new Toggle24();
+    hourUp up = new hourUp();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -25,6 +26,7 @@ public class ClockWorld extends World
         toggle.setImage("12hour.png");
         addObject(mainClock, 300, 200);
         addObject(toggle, 200, 300);
+        addObject(up, 400, 300);
     }
     
     public Clock getClock()

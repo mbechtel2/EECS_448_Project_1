@@ -15,5 +15,23 @@ public class hourUp extends ClockMenu
     public void act() 
     {
         // Add your action code here.
+        
+        toggle();
     }    
+    
+    public hourUp()
+    {
+        setImage("12hour.png");
+    }
+    
+    public void toggle()
+    {
+        ClockWorld worldClock = (ClockWorld) getWorld();
+        Clock myClock = worldClock.getClock();
+        
+        if (Greenfoot.mouseClicked(this))
+        {
+            myClock.changeHour(true);
+        }
+    }
 }

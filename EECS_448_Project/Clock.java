@@ -83,7 +83,10 @@ public class Clock extends Actor
             m_timeUpperBound = 24;
             if(m_timeOfDay == "P.M.")
             {
-                m_hour += 12;
+                if (m_hour != 12)
+                {
+                    m_hour += 12;
+                }
             }    
             else
             {
@@ -101,21 +104,26 @@ public class Clock extends Actor
             {
                 m_hour -=12;
                 m_timeOfDay = "P.M.";
+                m_timeZone = false;
+            }
+            else if (m_hour == 12)
+            {
+                m_timeOfDay = "P.M.";
+                m_timeZone = false;
             }
             else if (m_hour == 0)
             {
                 m_hour = 12;
                 m_timeOfDay = "A.M.";
+                m_timeZone = true;
             }
             else
             {
                 m_timeOfDay = "A.M.";
+                m_timeZone = true;
             }
             m_timeUpperBound = 12;
-            m_timeZone = true;
         }
-
-        return;
     }
     
     public boolean get24Hour()
@@ -149,6 +157,61 @@ public class Clock extends Actor
     public String getAM()
     {
         return m_timeOfDay;
+    }
+    
+    public void changeHour(boolean up)
+    {
+        if (up == true)
+        {
+            if (get24Hour() == true)
+            {
+                if (m_hour < 23)
+                {
+                    m_hour += 1;
+                }
+                else
+                {
+                    m_hour = 0;
+                }
+            }
+            else
+            {
+                if (m_hour < 12)
+                {
+                    if (m_hour == 11)
+                    {
+                         m_hour += 1;
+                         isAM(!m_timeZone);
+                    }
+                    else 
+                    {
+                        m_hour += 1;
+                    }
+                }
+                else
+                {
+                    m_hour = 1;                    
+                }
+            }
+        }
+        else
+        {
+            m_hour -= 1;
+        }
+        
+        return;
+    }
+    
+    public void changeMin(boolean up)
+    {
+        if (up == true)
+        {
+            m_minute += 1;
+        }
+        else
+        {
+            m_minute -= 1;
+        }
     }
     
     /*Clock Display for Console
