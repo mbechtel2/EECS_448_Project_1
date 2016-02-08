@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Clock
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Clock\ here.\r\n\ \r\n\ @author\ Michael\ Wang\ \r\n\ @version0\ 02/07/2016\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ \r\n\ \ \ \ \ \r\n\ \ \ \ public\ Clock()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ GreenfootImage\ clock\ \=\ new\ GreenfootImage\ (time,\ 10,\ null,\ null);\r\n\ \ \ \ \ \ \ \ GreenfootImage\ clockImage\ \=\ new\ GreenfootImage(clock.getWidth()+12,\ 24);\r\n\ \ \ \ \ \ \ \ //clockImage.setColor(new\ Color(196,\ 196,\ 0));\r\n\ \ \ \ \ \ \ \ //clockImage.fill();\r\n\ \ \ \ \ \ \ \ //clockImage.setColor(new\ Color(0,\ 0,\ 196));\r\n\ \ \ \ \ \ \ \ //clockImage.fillRect(3,\ 3,\ clockImage.getWidth()-6,\ 30);\r\n\ \ \ \ \ \ \ \ //clockImage.drawImage(clock,\ 6,\ 6);\r\n\ \ \ \ \ \ \ \ //clock.drawString(time,\ 5,\ 10);\r\n\ \ \ \ \ \ \ \ //setImage(time);\r\n}
+comment2.params=hours\ minutes\ seconds
+comment2.target=void\ setTime(int,\ int,\ int)
+comment3.params=time
+comment3.target=void\ is24Hour(boolean)
+comment4.params=AM
+comment4.target=void\ isAM(boolean)
+comment5.params=
+comment5.target=void\ displayClock()
+comment6.params=
+comment6.target=void\ calculateTime()
+numComments=7
