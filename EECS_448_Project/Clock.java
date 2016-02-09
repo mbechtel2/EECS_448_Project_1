@@ -44,11 +44,11 @@ public class Clock extends Actor
                 
         if (get24Hour() == false)
         {
-            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 70, null, null));
+            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 100, null, null));
         }
         else
         {
-            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, 70, null, null));
+            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, 100, null, null));
         }
     }    
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//

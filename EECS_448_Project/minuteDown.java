@@ -14,13 +14,12 @@ public class minuteDown extends ClockMenu
      */
     public void act() 
     {
-        // Add your action code here.
         toggle();
     }    
     
     public minuteDown()
     {
-        setImage("24hour.png");
+        setImage("minus.png");
     }
     
     public void toggle()

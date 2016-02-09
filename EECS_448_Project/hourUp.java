@@ -13,15 +13,13 @@ public class hourUp extends ClockMenu
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
-        // Add your action code here.
-        
+    {        
         toggle();
     }    
     
     public hourUp()
     {
-        setImage("12hour.png");
+        setImage("plus.png");
     }
     
     public void toggle()

@@ -14,9 +14,13 @@ public class Toggle24 extends ClockMenu
      */
     public void act() 
     {
-        // Add your action code here.
         toggle();
     }    
+    
+    public Toggle24()
+    {
+        setImage("12hour.png");
+    }
     
     public void toggle()
     {

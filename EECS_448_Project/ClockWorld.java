@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ClockWorld here.
+ * ClockWorld is the world containing the components of the digital clock
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Will Teeple
+ * @version 1.2
  */
 public class ClockWorld extends World
 {
@@ -23,19 +23,34 @@ public class ClockWorld extends World
     public ClockWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);      
+        super(600, 300, 1);      
+        setBackground(new GreenfootImage("clockFace.png"));
         
-        mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : " + mainClock.getTime()[1] + " : " + mainClock.getTime()[2]+ " " + mainClock.getAM(), 70, null, null));
-        toggle.setImage("12hour.png");
-        addObject(mainClock, 300, 200);
-        addObject(toggle, 200, 300);
-        addObject(hup, 400, 300);
-        addObject(hdown, 400, 500);
-        addObject(mup, 200, 100);
-        addObject(mdown, 400, 100);
-        addObject(rsSec, 200, 500);
+        mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : " + mainClock.getTime()[1] + " : " + mainClock.getTime()[2]+ " " + mainClock.getAM(), 100, null, null));
+
+        //add clock display
+        addObject(mainClock, 300, 100);
+        
+        //add 12/24 hour toggle button
+        addObject(toggle, 70, 248);
+        
+        //add hour set buttons
+        addObject(hup, 470, 245);
+        addObject(hdown, 470, 285);
+        
+        //add minute set buttons
+        addObject(mup, 520, 245);
+        addObject(mdown, 520, 285);
+        
+        //add second reset button
+        addObject(rsSec, 570, 255);
     }
     
+    /** 
+     * @pre : Existing Clock object
+     * @post : None
+     * @return : Returns the main Clock object in the world
+     */
     public Clock getClock()
     {
         return mainClock;

@@ -14,13 +14,12 @@ public class secondReset extends ClockMenu
      */
     public void act() 
     {
-        // Add your action code here.
         toggle();
     }    
     
     public secondReset()
     {
-        setImage("24hour.png");
+        setImage("reset.png");
     }
     
     public void toggle()
