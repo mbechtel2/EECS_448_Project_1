@@ -10,8 +10,8 @@ import java.util.Scanner;
  * Write a description of class Clock here.
  * 
  * @file : Clock.java
- * @author : William Teeple
- * @version : 1.1
+ * @author : Michael Wang and William Teeple
+ * @version : 1.2
  */
 
 //**********************************************************
@@ -41,14 +41,112 @@ public class Clock extends Actor
     public void act() 
     {
         this.calculateTime();
-                
+
         if (get24Hour() == false)
         {
-            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 100, null, null));
+            if (m_hour < 10)
+            {
+                if (m_minute < 10)
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                }
+                else
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                }
+            }
+            else
+            {
+                if (m_minute < 10)
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                }
+                else
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                    }
+                }
+            }
         }
         else
         {
-            setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, 100, null, null));
+            if (m_hour < 10)
+            {
+                if (m_minute < 10)
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second, 95, null, null));
+                    }
+                }
+                else
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second, 95, null, null));
+                    }
+                }
+            }
+            else
+            {
+                if (m_minute < 10)
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second, 95, null, null));
+                    }
+                }
+                else
+                {
+                    if (m_second < 10)
+                    {
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second, 95, null, null));
+                    }
+                    else
+                    {
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, 95, null, null));
+                    }
+                }
+            }
         }
     }    
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -57,18 +155,18 @@ public class Clock extends Actor
     {
         setTime(12, 0, 0);
     }
-    
+
     public int[] getTime()
     {
         int[] time = {m_hour, m_minute, m_second};
         return time;
     }
-    
+
     public Clock(int hours, int minutes, int seconds)
     {
         setTime(hours, minutes, seconds);
     }  
-   
+
     public void setTime(int hours, int minutes, int seconds)//sets the time with user input.
     {
         m_hour = hours;
@@ -125,7 +223,7 @@ public class Clock extends Actor
             m_timeUpperBound = 12;
         }
     }
-    
+
     public boolean get24Hour()
     {
         if (m_timeUpperBound == 12)
@@ -153,12 +251,12 @@ public class Clock extends Actor
 
         return; //wjt
     }
-    
+
     public String getAM()
     {
         return m_timeOfDay;
     }
-    
+
     public void changeHour(boolean up)
     {
         if (up == true)
@@ -180,8 +278,8 @@ public class Clock extends Actor
                 {
                     if (m_hour == 11)
                     {
-                         m_hour += 1;
-                         isAM(!m_timeZone);
+                        m_hour += 1;
+                        isAM(!m_timeZone);
                     }
                     else 
                     {
@@ -224,10 +322,10 @@ public class Clock extends Actor
                 }
             }
         }
-        
+
         return;
     }
-    
+
     public void changeMin(boolean up)
     {
         if (up == true)
@@ -254,30 +352,30 @@ public class Clock extends Actor
                 changeHour(false);
             }
         }
-        
+
         return;
     }
-    
+
     public void resetSec()
     {
         m_second = 0;
         startTime = System.currentTimeMillis();
     }
-    
+
     /*Clock Display for Console
     public void displayClock()//prints out the time of the clock
     {
-        if(m_timeUpperBound == 24)
-        {
-            System.out.println(m_hour + ":" + m_minute + ":" + m_second);
-        }
-        else
-        {
-            System.out.println(m_hour + ":" + m_minute + ":" + m_second + " " + m_timeOfDay);
-        }
+    if(m_timeUpperBound == 24)
+    {
+    System.out.println(m_hour + ":" + m_minute + ":" + m_second);
     }
-    */
-   
+    else
+    {
+    System.out.println(m_hour + ":" + m_minute + ":" + m_second + " " + m_timeOfDay);
+    }
+    }
+     */
+
     public void calculateTime()//this calculates the time for the clock
     {
         timeNow = System.currentTimeMillis() - startTime;//This grabs the system clock time in milliseconds
@@ -287,25 +385,24 @@ public class Clock extends Actor
             startTime = System.currentTimeMillis();
             m_second += 1;
         }
-        
+
         /*
         while(timeNow != timeLater)//This delays the process by one second
         {
-            timeNow = System.currentTimeMillis();
+        timeNow = System.currentTimeMillis();
         }
-        */
-        
-        
+         */
+
         if(m_second == 60)
         {
             m_second = 0;
             m_minute += 1;
-            
+
             if(m_minute == 60)
             {
                 m_minute = 0;
                 m_hour +=1;
-                
+
                 if(m_timeUpperBound == 24)
                 {
                     if(((m_hour == 24) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
@@ -340,105 +437,105 @@ public class Clock extends Actor
                 }
             }
         }
-        
+
         this.isAM(m_timeZone);
     }
     /* Code for Command Line Testing
     public void initMenu() //wjt ; console menu for method testing
     {
-        String h, m, s, input;
-        Scanner scanner = new Scanner(System.in);
+    String h, m, s, input;
+    Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to your new clock!");
+    System.out.println("Welcome to your new clock!");
 
-        do {
-            System.out.println("\nSelect 12 hour or 24 hour clock format.");
-            System.out.println("1. 12 hour");
-            System.out.println("2. 24 hour");
-            System.out.print("Your choice: ");
-            input = scanner.nextLine();
+    do {
+    System.out.println("\nSelect 12 hour or 24 hour clock format.");
+    System.out.println("1. 12 hour");
+    System.out.println("2. 24 hour");
+    System.out.print("Your choice: ");
+    input = scanner.nextLine();
 
-            if (Integer.parseInt(input) == 1)
-            {
-                is24Hour(false);
-            }
-            else if (Integer.parseInt(input) == 2)
-            {
-                is24Hour(true);
-            }
-            else
-            {
-                System.out.println("Invalid selection, please choose again.");
-            }
-        } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
-
-        if (m_timeUpperBound == 24)
-        {
-            System.out.println("\nLet's set the time.");
-            do {
-                System.out.print("Hours: ");
-                h = scanner.nextLine();
-                if (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23)
-                {
-                    System.out.println("Invalid selection, please choose again.");
-                }
-            } while (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23);
-        }
-        else //if 12
-        {
-            do {
-                do {
-                    System.out.println("\nA.M. or P.M.?");
-                    System.out.println("1. A.M.");
-                    System.out.println("2. P.M.");
-                    System.out.print("Your choice: ");
-                    input = scanner.nextLine();
-                    if (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2)
-                    {
-                        System.out.println("Invalid selection, please choose again.");
-                    }
-                } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
-                if (Integer.parseInt(input) == 1)
-                {
-                    isAM(true);
-                }
-                else
-                {
-                    isAM(false);
-                }
-
-                System.out.println("\nLet's set the time.");
-                System.out.print("Hours: ");
-                h = scanner.nextLine();
-                if (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12)
-                {
-                    System.out.println("Invalid selection, please choose again.");
-                }
-            } while (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12);
-        }
-
-        do {
-            System.out.print("Minutes: ");
-            m = scanner.nextLine();
-            if (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60)
-            {
-                System.out.println("Invalid selection, please choose again.");
-            }
-        } while (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60);
-
-        do {
-            System.out.print("Seconds: ");
-            s = scanner.nextLine();
-            if (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60)
-            {
-                System.out.println("Invalid selection, please choose again.");
-            }
-        } while (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60);
-
-        setTime(Integer.parseInt(h), Integer.parseInt(m), Integer.parseInt(s));
-
-        System.out.println("\nEverything looks good! Your clock will now begin.\n");
+    if (Integer.parseInt(input) == 1)
+    {
+    is24Hour(false);
     }
-    */
+    else if (Integer.parseInt(input) == 2)
+    {
+    is24Hour(true);
+    }
+    else
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
+
+    if (m_timeUpperBound == 24)
+    {
+    System.out.println("\nLet's set the time.");
+    do {
+    System.out.print("Hours: ");
+    h = scanner.nextLine();
+    if (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23)
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23);
+    }
+    else //if 12
+    {
+    do {
+    do {
+    System.out.println("\nA.M. or P.M.?");
+    System.out.println("1. A.M.");
+    System.out.println("2. P.M.");
+    System.out.print("Your choice: ");
+    input = scanner.nextLine();
+    if (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2)
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
+    if (Integer.parseInt(input) == 1)
+    {
+    isAM(true);
+    }
+    else
+    {
+    isAM(false);
+    }
+
+    System.out.println("\nLet's set the time.");
+    System.out.print("Hours: ");
+    h = scanner.nextLine();
+    if (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12)
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12);
+    }
+
+    do {
+    System.out.print("Minutes: ");
+    m = scanner.nextLine();
+    if (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60)
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60);
+
+    do {
+    System.out.print("Seconds: ");
+    s = scanner.nextLine();
+    if (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60)
+    {
+    System.out.println("Invalid selection, please choose again.");
+    }
+    } while (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60);
+
+    setTime(Integer.parseInt(h), Integer.parseInt(m), Integer.parseInt(s));
+
+    System.out.println("\nEverything looks good! Your clock will now begin.\n");
+    }
+     */
 }
 
