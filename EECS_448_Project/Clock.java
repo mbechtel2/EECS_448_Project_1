@@ -31,7 +31,7 @@ public class Clock extends Actor
     public int m_timeUpperBound = 12;//tells if the clock is 24 hours or 12 hour clock
     public boolean m_timeZone = true;//tells if the time is AM or PM
     public long timeNow = 0;
-    public long timeLater = 0;
+    public long startTime = System.currentTimeMillis();
     public String m_timeOfDay = "A.M.";
 
     /**
@@ -196,7 +196,33 @@ public class Clock extends Actor
         }
         else
         {
-            m_hour -= 1;
+            if (get24Hour() == true)
+            {
+                if (m_hour > 0)
+                {
+                    m_hour -= 1;
+                }
+                else
+                {
+                    m_hour = 23;
+                }
+            }
+            else
+            {
+                if (m_hour > 1 && m_hour != 12)
+                {
+                    m_hour -= 1;
+                }
+                else if (m_hour == 12)
+                {
+                    m_hour -= 1;
+                    isAM(!m_timeZone);
+                }
+                else
+                {
+                    m_hour = 12;
+                }
+            }
         }
         
         return;
@@ -206,12 +232,36 @@ public class Clock extends Actor
     {
         if (up == true)
         {
-            m_minute += 1;
+            if (m_minute < 59)
+            {
+                m_minute += 1;
+            }
+            else
+            {
+                m_minute = 0;
+                changeHour(true);
+            }
         }
         else
         {
-            m_minute -= 1;
+            if (m_minute > 0)
+            {
+                m_minute -= 1;
+            }
+            else
+            {
+                m_minute = 59;
+                changeHour(false);
+            }
         }
+        
+        return;
+    }
+    
+    public void resetSec()
+    {
+        m_second = 0;
+        startTime = System.currentTimeMillis();
     }
     
     /*Clock Display for Console
@@ -230,15 +280,21 @@ public class Clock extends Actor
    
     public void calculateTime()//this calculates the time for the clock
     {
-        timeNow = System.currentTimeMillis();//This grabs the system clock time in milliseconds
-        timeLater = (System.currentTimeMillis()+1000);
+        timeNow = System.currentTimeMillis() - startTime;//This grabs the system clock time in milliseconds
+        if (timeNow >= 1000)
+        {
+            timeNow = 0;
+            startTime = System.currentTimeMillis();
+            m_second += 1;
+        }
         
+        /*
         while(timeNow != timeLater)//This delays the process by one second
         {
             timeNow = System.currentTimeMillis();
         }
+        */
         
-        m_second += 1;
         
         if(m_second == 60)
         {

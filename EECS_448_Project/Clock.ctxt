@@ -9,8 +9,10 @@ comment10.target=void\ changeHour(boolean)
 comment11.params=up
 comment11.target=void\ changeMin(boolean)
 comment12.params=
-comment12.target=void\ calculateTime()
-comment12.text=Clock\ Display\ for\ Console\r\n\ \ \ \ public\ void\ displayClock()//prints\ out\ the\ time\ of\ the\ clock\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ if(m_timeUpperBound\ \=\=\ 24)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(m_hour\ +\ "\:"\ +\ m_minute\ +\ "\:"\ +\ m_second);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(m_hour\ +\ "\:"\ +\ m_minute\ +\ "\:"\ +\ m_second\ +\ "\ "\ +\ m_timeOfDay);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment12.target=void\ resetSec()
+comment13.params=
+comment13.target=void\ calculateTime()
+comment13.text=Clock\ Display\ for\ Console\r\n\ \ \ \ public\ void\ displayClock()//prints\ out\ the\ time\ of\ the\ clock\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ if(m_timeUpperBound\ \=\=\ 24)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(m_hour\ +\ "\:"\ +\ m_minute\ +\ "\:"\ +\ m_second);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(m_hour\ +\ "\:"\ +\ m_minute\ +\ "\:"\ +\ m_second\ +\ "\ "\ +\ m_timeOfDay);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
 comment2.params=
 comment2.target=Clock()
 comment3.params=
@@ -27,4 +29,4 @@ comment8.params=AM
 comment8.target=void\ isAM(boolean)
 comment9.params=
 comment9.target=java.lang.String\ getAM()
-numComments=13
+numComments=14

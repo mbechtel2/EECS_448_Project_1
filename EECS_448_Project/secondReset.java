@@ -15,5 +15,22 @@ public class secondReset extends ClockMenu
     public void act() 
     {
         // Add your action code here.
+        toggle();
     }    
+    
+    public secondReset()
+    {
+        setImage("24hour.png");
+    }
+    
+    public void toggle()
+    {
+        ClockWorld worldClock = (ClockWorld) getWorld();
+        Clock myClock = worldClock.getClock();
+        
+        if (Greenfoot.mouseClicked(this))
+        {
+            myClock.resetSec();
+        }
+    }
 }
