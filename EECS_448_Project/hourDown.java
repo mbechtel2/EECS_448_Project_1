@@ -42,4 +42,10 @@ public class hourDown extends ClockMenu
             myClock.changeHour(false);
         }
     }
+    
+    /**
+     * Citation for image used: plus/minus sign
+     * 
+     * http://worldartsme.com/minus/?order=downloads      
+     */
 }

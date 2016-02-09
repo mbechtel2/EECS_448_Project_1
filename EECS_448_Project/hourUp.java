@@ -42,4 +42,10 @@ public class hourUp extends ClockMenu
             myClock.changeHour(true);
         }
     }
+    
+    /**
+     * Citation for image used: plus/minus sign
+     * 
+     * http://worldartsme.com/minus/?order=downloads      
+     */
 }

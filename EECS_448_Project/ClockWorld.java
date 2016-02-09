@@ -26,7 +26,7 @@ public class ClockWorld extends World
         super(600, 300, 1);      
         setBackground(new GreenfootImage("clockFace.png"));
         
-        
+        //set default clock message
         mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
 
         //add clock display

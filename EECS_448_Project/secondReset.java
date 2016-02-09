@@ -42,4 +42,10 @@ public class secondReset extends ClockMenu
             myClock.resetSec();
         }
     }
+    
+    /**
+     * Citation for image used: reset button
+     * 
+     * http://optimus5.com/index.php?page=search/images&search=restart+button&type=images
+     */
 }

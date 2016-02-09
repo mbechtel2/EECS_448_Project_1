@@ -42,4 +42,10 @@ public class minuteUp extends ClockMenu
             myClock.changeMin(true);
         }
     }
+    
+    /**
+     * Citation for image used: plus/minus sign
+     * 
+     * http://worldartsme.com/minus/?order=downloads      
+     */
 }
