@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Toggle24
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Toggle24\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Toggles\ the\ clock\ between\ 12-\ and\ 24-\ hour\ modes\r\n\ \r\n\ @author\ Will\ Teeple\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Toggle24\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=Toggle24()
+comment2.text=\r\n\ @pre\ \:\ None\r\n\ @post\ \:\ Creates\ a\ new\ object\ of\ type\ Toggle24\ with\ designated\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ toggle()
+comment3.text=\r\n\ @pre\ \:\ Existing\ Clock\ and\ Toggle24\ objects\r\n\ @post\ \:\ Switches\ the\ clock\ between\ 12-\ and\ 24-\ hour\ modes\ and\ alternates\ images\r\n\ @return\ \:\ None\r\n
 numComments=4

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class hourDown here.
+ * Decrements the value of the clock's hour variable when clicked
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Will Teeple
+ * @version 1.2
  */
 public class hourDown extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class hourDown extends ClockMenu
         toggle();
     }    
     
+    /**
+     * @pre : None
+     * @post : Creates a new object of type hourDown with designated image
+     * @return : None
+     */
     public hourDown()
     {
         setImage("minus.png");
     }
     
+    /**
+     * @pre : Existing Clock and hourDown objects
+     * @post : Decrements the clock's hour variable by one
+     * @return : None
+     */
     public void toggle()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

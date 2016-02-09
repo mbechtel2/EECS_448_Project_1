@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 /**
- * Write a description of class Clock here.
+ * Main class for the Clock object. Contains methods for displaying and setting the clock and switching between modes.
  * 
  * @file : Clock.java
  * @author : Michael Wang and William Teeple
@@ -25,14 +25,14 @@ import java.util.Scanner;
 
 public class Clock extends Actor
 {
-    private int m_hour = 0;
-    private int m_minute = 0;
-    private int m_second = 0;
+    private int m_hour = 0; //current hour
+    private int m_minute = 0; //current minute
+    private int m_second = 0; //current second
     public int m_timeUpperBound = 12;//tells if the clock is 24 hours or 12 hour clock
     public boolean m_timeZone = true;//tells if the time is AM or PM
-    public long timeNow = 0;
-    public long startTime = System.currentTimeMillis();
-    public String m_timeOfDay = "A.M.";
+    public long timeNow = 0; //time comparison variable
+    public long startTime = System.currentTimeMillis(); //time snapshot
+    public String m_timeOfDay = "A.M."; //AM/PM output string
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever
@@ -151,22 +151,42 @@ public class Clock extends Actor
     }    
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
+    /**
+     * @pre : None
+     * @post : Creates a new object of type Clock with default time 12:00:00
+     * @return : None
+     */
     public Clock() //wjt ; constructor
     {
         setTime(12, 0, 0);
     }
-
-    public int[] getTime()
-    {
-        int[] time = {m_hour, m_minute, m_second};
-        return time;
-    }
-
+    
+      /**
+     * @pre : None
+     * @post : Creates a new Clock object with the time corresponding to input arguments
+     * @return : None
+     */
     public Clock(int hours, int minutes, int seconds)
     {
         setTime(hours, minutes, seconds);
     }  
 
+    /**
+     * @pre : Existing Clock object
+     * @post : None
+     * @return : Returns the current time in an array
+     */
+    public int[] getTime()
+    {
+        int[] time = {m_hour, m_minute, m_second};
+        return time;
+    }  
+
+    /**
+     * @pre : Existing Clock object
+     * @post : Sets the current time of the clock
+     * @return : None
+     */
     public void setTime(int hours, int minutes, int seconds)//sets the time with user input.
     {
         m_hour = hours;
@@ -174,6 +194,11 @@ public class Clock extends Actor
         m_second = seconds;
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : Sets the clock to 24- hour mode if true, 12- hour mode if false
+     * @return : None
+     */
     public void is24Hour(boolean time)//sets the boundary for 24 hour clock or 12 hour clock. ; wjt return type to void
     {
         if(time == true)
@@ -224,6 +249,11 @@ public class Clock extends Actor
         }
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : None
+     * @return : Returns true if the clock is in 24- hour mode, false otherwise
+     */
     public boolean get24Hour()
     {
         if (m_timeUpperBound == 12)
@@ -236,6 +266,11 @@ public class Clock extends Actor
         }
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : Sets the clock to AM/PM, AM if true, PM if false
+     * @return : None
+     */
     public void isAM(boolean AM)//tells the if the time is AM or PM or 12 hour ; wjt change return to void
     {
         if(AM == true)
@@ -252,11 +287,21 @@ public class Clock extends Actor
         return; //wjt
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : None
+     * @return : Returns true if the clock is set to AM, false otherwise
+     */
     public String getAM()
     {
         return m_timeOfDay;
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : Changes the clock hour, increments if argument is true, decrements if argument is false
+     * @return : None
+     */
     public void changeHour(boolean up)
     {
         if (up == true)
@@ -326,6 +371,11 @@ public class Clock extends Actor
         return;
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : Changes the clock minute, increments if argument is true, decrements if argument is false
+     * @return : None
+     */
     public void changeMin(boolean up)
     {
         if (up == true)
@@ -356,29 +406,26 @@ public class Clock extends Actor
         return;
     }
 
+    /**
+     * @pre : Existing Clock object
+     * @post : Resets the value of the clock's second variable to zero
+     * @return : None
+     */
     public void resetSec()
     {
         m_second = 0;
         startTime = System.currentTimeMillis();
     }
 
-    /*Clock Display for Console
-    public void displayClock()//prints out the time of the clock
-    {
-    if(m_timeUpperBound == 24)
-    {
-    System.out.println(m_hour + ":" + m_minute + ":" + m_second);
-    }
-    else
-    {
-    System.out.println(m_hour + ":" + m_minute + ":" + m_second + " " + m_timeOfDay);
-    }
-    }
+    /**
+     * @pre : Existing Clock object
+     * @post : Increments the second variable every 1000 ms, and updates all other time variables as necessary
+     * @return : None
      */
-
     public void calculateTime()//this calculates the time for the clock
     {
-        timeNow = System.currentTimeMillis() - startTime;//This grabs the system clock time in milliseconds
+        timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
+        
         if (timeNow >= 1000)
         {
             timeNow = 0;
@@ -440,102 +487,5 @@ public class Clock extends Actor
 
         this.isAM(m_timeZone);
     }
-    /* Code for Command Line Testing
-    public void initMenu() //wjt ; console menu for method testing
-    {
-    String h, m, s, input;
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.println("Welcome to your new clock!");
-
-    do {
-    System.out.println("\nSelect 12 hour or 24 hour clock format.");
-    System.out.println("1. 12 hour");
-    System.out.println("2. 24 hour");
-    System.out.print("Your choice: ");
-    input = scanner.nextLine();
-
-    if (Integer.parseInt(input) == 1)
-    {
-    is24Hour(false);
-    }
-    else if (Integer.parseInt(input) == 2)
-    {
-    is24Hour(true);
-    }
-    else
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
-
-    if (m_timeUpperBound == 24)
-    {
-    System.out.println("\nLet's set the time.");
-    do {
-    System.out.print("Hours: ");
-    h = scanner.nextLine();
-    if (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23)
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(h) < 0 || Integer.parseInt(h) > 23);
-    }
-    else //if 12
-    {
-    do {
-    do {
-    System.out.println("\nA.M. or P.M.?");
-    System.out.println("1. A.M.");
-    System.out.println("2. P.M.");
-    System.out.print("Your choice: ");
-    input = scanner.nextLine();
-    if (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2)
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(input) != 1 && Integer.parseInt(input) != 2);
-    if (Integer.parseInt(input) == 1)
-    {
-    isAM(true);
-    }
-    else
-    {
-    isAM(false);
-    }
-
-    System.out.println("\nLet's set the time.");
-    System.out.print("Hours: ");
-    h = scanner.nextLine();
-    if (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12)
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(h) < 1 || Integer.parseInt(h) > 12);
-    }
-
-    do {
-    System.out.print("Minutes: ");
-    m = scanner.nextLine();
-    if (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60)
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(m) < 0 || Integer.parseInt(m) > 60);
-
-    do {
-    System.out.print("Seconds: ");
-    s = scanner.nextLine();
-    if (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60)
-    {
-    System.out.println("Invalid selection, please choose again.");
-    }
-    } while (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 60);
-
-    setTime(Integer.parseInt(h), Integer.parseInt(m), Integer.parseInt(s));
-
-    System.out.println("\nEverything looks good! Your clock will now begin.\n");
-    }
-     */
 }
 

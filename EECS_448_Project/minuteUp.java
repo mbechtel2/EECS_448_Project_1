@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class minuteUp here.
+ * Increments the value of the clock's minute variable when clicked
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Will Teeple
+ * @version 1.2
  */
 public class minuteUp extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class minuteUp extends ClockMenu
         toggle();
     }    
     
+    /**
+     * @pre : None
+     * @post : Creates a new object of type minuteUp with designated image
+     * @return : None
+     */
     public minuteUp()
     {
         setImage("plus.png");
     }
     
+    /**
+     * @pre : Existing Clock and minuteUp objects
+     * @post : Increments the value of the clock's minute variable by one
+     * @return : None
+     */
     public void toggle()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

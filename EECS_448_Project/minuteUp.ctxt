@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=minuteUp
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ minuteUp\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Increments\ the\ value\ of\ the\ clock's\ minute\ variable\ when\ clicked\r\n\ \r\n\ @author\ Will\ Teeple\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ minuteUp\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=minuteUp()
+comment2.text=\r\n\ @pre\ \:\ None\r\n\ @post\ \:\ Creates\ a\ new\ object\ of\ type\ minuteUp\ with\ designated\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ toggle()
+comment3.text=\r\n\ @pre\ \:\ Existing\ Clock\ and\ minuteUp\ objects\r\n\ @post\ \:\ Increments\ the\ value\ of\ the\ clock's\ minute\ variable\ by\ one\r\n\ @return\ \:\ None\r\n
 numComments=4

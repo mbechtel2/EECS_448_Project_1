@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Containts classes for menu options
+ * Label for the minute set buttons
  * 
  * @author Will Teeple
  * @version 1.2
  */
-public class ClockMenu extends Clock
+public class minLabel extends ClockMenu
 {
     /**
-     * Act - do whatever the ClockMenu wants to do. This method is called whenever
+     * Act - do whatever the minLabel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

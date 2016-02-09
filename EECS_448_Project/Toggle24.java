@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Toggle24 here.
+ * Toggles the clock between 12- and 24- hour modes
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Will Teeple
+ * @version 1.2
  */
 public class Toggle24 extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class Toggle24 extends ClockMenu
         toggle();
     }    
     
+    /**
+     * @pre : None
+     * @post : Creates a new object of type Toggle24 with designated image
+     * @return : None
+     */
     public Toggle24()
     {
         setImage("12hour.png");
     }
     
+    /**
+     * @pre : Existing Clock and Toggle24 objects
+     * @post : Switches the clock between 12- and 24- hour modes and alternates images
+     * @return : None
+     */
     public void toggle()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

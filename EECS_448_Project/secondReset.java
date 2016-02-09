@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class secondReset here.
+ * Resets the second count to zero when clicked
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Will Teeple
+ * @version 1.2
  */
 public class secondReset extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class secondReset extends ClockMenu
         toggle();
     }    
     
+    /**
+     * @pre : None
+     * @post : Creates a new object of type secondReset with designated image
+     * @return : None
+     */
     public secondReset()
     {
         setImage("reset.png");
     }
     
+    /**
+     * @pre : Existing Clock and secondReset objects
+     * @post : Resets the second count to zero
+     * @return : None
+     */
     public void toggle()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

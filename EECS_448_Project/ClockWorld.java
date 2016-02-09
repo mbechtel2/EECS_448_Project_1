@@ -26,6 +26,7 @@ public class ClockWorld extends World
         super(600, 300, 1);      
         setBackground(new GreenfootImage("clockFace.png"));
         
+        
         mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
 
         //add clock display
@@ -37,13 +38,16 @@ public class ClockWorld extends World
         //add hour set buttons
         addObject(hup, 470, 245);
         addObject(hdown, 470, 285);
+        addObject(new hourLabel(), 470, 215);
         
         //add minute set buttons
         addObject(mup, 520, 245);
         addObject(mdown, 520, 285);
+        addObject(new minLabel(), 520, 215);
         
         //add second reset button
         addObject(rsSec, 570, 255);
+        addObject(new secLabel(), 570, 215);
     }
     
     /** 
