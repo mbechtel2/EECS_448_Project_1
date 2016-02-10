@@ -11,9 +11,11 @@ public class buttonPM extends Clock
     public void act() 
     {
         // Add your action code here.
+        MyWorld clocks = (MyWorld) getWorld();
+        Clock clock1 = clocks.getClock();
         if(Greenfoot.mouseClicked(this))
         {
-            isAM(false);
+            clock1.isAM(false);
         }
     }    
 }

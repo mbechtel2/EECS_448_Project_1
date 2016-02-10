@@ -20,6 +20,9 @@ public class Clock extends Actor
   long timeLater = 0;
   String m_timeOfDay = "A.M.";
   String time = "";
+  long startTime = System.currentTimeMillis();
+  int mSec = 0;
+  
      /**
      * Act - do whatever the Clock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -56,6 +59,90 @@ public class Clock extends Actor
       m_second = seconds;
   }
   
+  public void addMin()
+  {
+       m_minute = m_minute + 1;
+           if(m_minute == 60)
+           {
+               m_minute = 0;
+           }
+  }
+  public void minusMin()
+  {
+      m_minute = m_minute - 1;
+            if(m_minute == -1)
+            {
+                m_minute = 59;
+            }
+  }
+  public void addHr()
+  {
+        m_hour = m_hour + 1; 
+        
+        if(m_timeUpperBound == 24)
+            {
+                if(m_hour == 24)
+                {
+                 m_hour = 0;
+                }
+            }
+            else
+            {
+                if(m_hour == 13)
+                {
+                    m_hour = 1;
+                }
+            }
+  }
+  public void minusHr()
+  {
+        m_hour = m_hour - 1;
+        
+        if(m_timeUpperBound == 24)
+            {
+                if(m_hour == -1)
+                {
+                 m_hour = 23;
+                }
+            }
+            else
+            {
+                if(m_hour == 0)
+                {
+                    m_hour = 12;
+                }
+            }
+  }
+  public void hour24()
+  {
+      is24Hour(true);
+      if(m_timeOfDay == "A.M.")
+      {
+          if(m_hour == 12)
+          {
+              m_hour = 0;
+          }
+      }
+      else if(m_timeOfDay == "P.M.")
+      {
+          m_hour = ((m_hour % 12) + 12);
+      }
+  }
+  public void hour12()
+  {
+      is24Hour(false);
+      if(m_timeOfDay == "A.M.")
+      {
+          if(m_hour == 0)
+          {
+              m_hour = 12;
+          }
+      }
+      else if(m_timeOfDay == "P.M.")
+      {
+          m_hour = (m_hour % 12);
+      }
+  }
   public void is24Hour(boolean time)//sets the boundary for 24 hour clock or 12 hour clock.
   {
     if(time == true)
@@ -88,7 +175,7 @@ public class Clock extends Actor
      {
         //System.out.println(m_hour + ":" + m_minute + ":" + m_second );
         //time = (m_hour + ":" + m_minute + ":" + m_second );
-        setImage(new GreenfootImage(m_hour + ":" + m_minute + ":" + m_second, 30, null, null)); 
+        setImage(new GreenfootImage(m_hour + ":" + m_minute + ":" + m_second + "         ", 30, null, null)); 
      }
      else
      {
@@ -102,11 +189,32 @@ public class Clock extends Actor
   {
       timeNow = System.currentTimeMillis();//This grabs the system clock time in milliseconds
       timeLater = (System.currentTimeMillis()+1000);
-      while(timeNow != timeLater)//This delays the process by one second
+      /*while(timeNow != timeLater)//This delays the process by one second
       {
         timeNow = System.currentTimeMillis();
       }
       m_second += 1;
+      */
+     /*
+      if(timeNow > 1000)
+      {
+          timeNow = System.currentTimeMillis();
+          timeLater = (System.currentTimeMillis()+1000);
+          m_second += 1;
+      }
+      */
+      if(timeNow > 1000)
+      {
+          timeNow = System.currentTimeMillis();
+          timeLater = (System.currentTimeMillis()+1000);
+          mSec += 1;
+      }
+      
+      if(mSec == 1000)
+      {
+          mSec = 0;
+          m_second += 1;
+      }
       if(m_second == 60)
       {
         m_second = 0;
@@ -129,6 +237,7 @@ public class Clock extends Actor
                     if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                     {
                         m_timeZone = false; 
+                        m_timeOfDay = "P.M.";
                     }
                     else if(((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                     {
@@ -140,6 +249,7 @@ public class Clock extends Actor
                     if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                     {
                         m_timeZone = true;  
+                        m_timeOfDay = "A.M.";
                     }
                     else if(!((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                     {
