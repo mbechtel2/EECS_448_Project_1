@@ -2,9 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * instantiates and instance of the world the clock runs in
+ * @author Michael Wang 
+ * @version 02/10/2016
  */
 public class MyWorld extends World
 {
@@ -13,6 +13,9 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+     //pre - none
+    //post - runs the world similar to a main
+    //return - none
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -37,6 +40,9 @@ public class MyWorld extends World
         addObject(new button12(), 400, 100);
         addObject(new button24(), 500, 100);
     }
+    //pre - none
+    //post - none
+    //return - clock1 instance
     public Clock getClock()
   {
       return (clock1);
