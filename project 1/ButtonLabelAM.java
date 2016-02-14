@@ -12,18 +12,22 @@ public class ButtonLabelAM extends Actor
      * Act - do whatever the ButtonLabelAM wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     //pre - none
-    //post - constructs an instance of a button label
-    //return - none
+     /**
+    @param pre - none
+    @param post - constructs an instance of a button label
+    @return - none
+    */
     public ButtonLabelAM()
     {
         GreenfootImage AMLabel = new GreenfootImage (30, 30);
         AMLabel.drawString("A.M.", 5, 10);
         setImage(AMLabel);
     }
-    //pre - none
-    //post - runs as the world is running
-    //return - none
+    /**
+    @param pre - none
+    @param post - runs as the world is running
+    @return - none
+    */
     public void act() 
     {
         // Add your action code here.
