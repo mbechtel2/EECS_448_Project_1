@@ -13,9 +13,11 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-     //pre - none
-    //post - runs the world similar to a main
-    //return - none
+     /**
+     @param pre - none
+    @param post - runs the world similar to a main
+    @return - none
+    */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -40,9 +42,11 @@ public class MyWorld extends World
         addObject(new button12(), 400, 100);
         addObject(new button24(), 500, 100);
     }
-    //pre - none
-    //post - none
-    //return - clock1 instance
+    /**
+    @param pre - none
+    @param post - none
+    @return - clock1 instance
+    */
     public Clock getClock()
   {
       return (clock1);
