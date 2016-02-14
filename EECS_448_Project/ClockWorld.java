@@ -51,8 +51,8 @@ public class ClockWorld extends World
     }
     
     /** 
-     * @pre : Existing Clock object
-     * @post : None
+     * @param : (pre) Existing Clock object
+     * @param : (post) None
      * @return : Returns the main Clock object in the world
      */
     public Clock getClock()

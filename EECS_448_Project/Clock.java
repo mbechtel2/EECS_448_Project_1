@@ -152,8 +152,10 @@ public class Clock extends Actor
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
     /**
-     * @pre : None
-     * @post : Creates a new object of type Clock with default time 12:00:00
+     * Clock constructor, sets time to 12:00:00 AM
+     * 
+     * @param : (pre) None
+     * @param  : (post) Creates a new object of type Clock with default time 12:00:00
      * @return : None
      */
     public Clock() //wjt ; constructor
@@ -161,9 +163,11 @@ public class Clock extends Actor
         setTime(12, 0, 0);
     }
     
-      /**
-     * @pre : None
-     * @post : Creates a new Clock object with the time corresponding to input arguments
+    /**
+     * Clock Constructor, sets time according to input arguments.
+     * 
+     * @param : (pre) None
+     * @param : (post) Creates a new Clock object with the time corresponding to input arguments
      * @return : None
      */
     public Clock(int hours, int minutes, int seconds)
@@ -172,8 +176,10 @@ public class Clock extends Actor
     }  
 
     /**
-     * @pre : Existing Clock object
-     * @post : None
+     * Returns the current time of the clock.
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) None
      * @return : Returns the current time in an array
      */
     public int[] getTime()
@@ -183,8 +189,10 @@ public class Clock extends Actor
     }  
 
     /**
-     * @pre : Existing Clock object
-     * @post : Sets the current time of the clock
+     * Sets the current time of the clock.
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Sets the current time of the clock
      * @return : None
      */
     public void setTime(int hours, int minutes, int seconds)//sets the time with user input.
@@ -195,8 +203,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Sets the clock to 24- hour mode if true, 12- hour mode if false
+     * Sets the clock to either 12- or 24 hour mode.
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Sets the clock to 24- hour mode if true, 12- hour mode if false
      * @return : None
      */
     public void is24Hour(boolean time)//sets the boundary for 24 hour clock or 12 hour clock. ; wjt return type to void
@@ -250,8 +260,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : None
+     * Returns a boolean value corresponding to the current 'mode'
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) None
      * @return : Returns true if the clock is in 24- hour mode, false otherwise
      */
     public boolean get24Hour()
@@ -267,8 +279,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Sets the clock to AM/PM, AM if true, PM if false
+     * Sets the clock to be either AM or PM
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Sets the clock to AM/PM, AM if true, PM if false
      * @return : None
      */
     public void isAM(boolean AM)//tells the if the time is AM or PM or 12 hour ; wjt change return to void
@@ -288,8 +302,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : None
+     * Returns a boolean value corresponding to either AM or PM
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) None
      * @return : Returns true if the clock is set to AM, false otherwise
      */
     public String getAM()
@@ -298,8 +314,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Changes the clock hour, increments if argument is true, decrements if argument is false
+     * Increments or decrements the hour depending on the input argument
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Changes the clock hour, increments if argument is true, decrements if argument is false
      * @return : None
      */
     public void changeHour(boolean up)
@@ -372,8 +390,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Changes the clock minute, increments if argument is true, decrements if argument is false
+     * Increments or decrements the minute depending on the input argument
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Changes the clock minute, increments if argument is true, decrements if argument is false
      * @return : None
      */
     public void changeMin(boolean up)
@@ -407,8 +427,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Resets the value of the clock's second variable to zero
+     * Resets the second count to zero
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Resets the value of the clock's second variable to zero
      * @return : None
      */
     public void resetSec()
@@ -418,8 +440,10 @@ public class Clock extends Actor
     }
 
     /**
-     * @pre : Existing Clock object
-     * @post : Increments the second variable every 1000 ms, and updates all other time variables as necessary
+     * Updates the time of the clock appropriately, incrementing minutes/hours when necessary
+     * 
+     * @param : (pre) Existing Clock object
+     * @param : (post) Increments the second variable every 1000 ms, and updates all other time variables as necessary
      * @return : None
      */
     public void calculateTime()//this calculates the time for the clock

@@ -18,8 +18,8 @@ public class Toggle24 extends ClockMenu
     }    
     
     /**
-     * @pre : None
-     * @post : Creates a new object of type Toggle24 with designated image
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type Toggle24 with designated image
      * @return : None
      */
     public Toggle24()
@@ -28,8 +28,8 @@ public class Toggle24 extends ClockMenu
     }
     
     /**
-     * @pre : Existing Clock and Toggle24 objects
-     * @post : Switches the clock between 12- and 24- hour modes and alternates images
+     * @param : (pre) Existing Clock and Toggle24 objects
+     * @param : (pre) Switches the clock between 12- and 24- hour modes and alternates images
      * @return : None
      */
     public void toggle()

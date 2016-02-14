@@ -3,6 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Increments the value of the clock's minute variable when clicked
  * 
+ * Citation for image used: plus/minus sign:
+ * http://worldartsme.com/minus/?order=downloads 
+ * 
  * @author Will Teeple
  * @version 1.2
  */
@@ -18,8 +21,8 @@ public class minuteUp extends ClockMenu
     }    
     
     /**
-     * @pre : None
-     * @post : Creates a new object of type minuteUp with designated image
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type minuteUp with designated image
      * @return : None
      */
     public minuteUp()
@@ -28,8 +31,8 @@ public class minuteUp extends ClockMenu
     }
     
     /**
-     * @pre : Existing Clock and minuteUp objects
-     * @post : Increments the value of the clock's minute variable by one
+     * @param : (pre) Existing Clock and minuteUp objects
+     * @param : (post) Increments the value of the clock's minute variable by one
      * @return : None
      */
     public void toggle()
@@ -42,10 +45,4 @@ public class minuteUp extends ClockMenu
             myClock.changeMin(true);
         }
     }
-    
-    /**
-     * Citation for image used: plus/minus sign
-     * 
-     * http://worldartsme.com/minus/?order=downloads      
-     */
 }

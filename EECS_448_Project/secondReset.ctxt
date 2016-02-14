@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=secondReset
-comment0.text=\r\n\ Resets\ the\ second\ count\ to\ zero\ when\ clicked\r\n\ \r\n\ @author\ Will\ Teeple\r\n\ @version\ 1.2\r\n
+comment0.text=\r\n\ Resets\ the\ second\ count\ to\ zero\ when\ clicked\r\n\ \r\n\ Citation\ for\ image\ used\:\ reset\ button\:\r\n\ http\://optimus5.com/index.php?page\=search/images&search\=restart+button&type\=images\r\n\ \r\n\ @author\ Will\ Teeple\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ secondReset\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=secondReset()
-comment2.text=\r\n\ @pre\ \:\ None\r\n\ @post\ \:\ Creates\ a\ new\ object\ of\ type\ secondReset\ with\ designated\ image\r\n\ @return\ \:\ None\r\n
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ secondReset\ with\ designated\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ toggle()
-comment3.text=\r\n\ @pre\ \:\ Existing\ Clock\ and\ secondReset\ objects\r\n\ @post\ \:\ Resets\ the\ second\ count\ to\ zero\r\n\ @return\ \:\ None\r\n
+comment3.text=\r\n\ @param\ \:\ (pre)\ Existing\ Clock\ and\ secondReset\ objects\r\n\ @param\ \:\ (post)\ Resets\ the\ second\ count\ to\ zero\r\n\ @return\ \:\ None\r\n
 numComments=4

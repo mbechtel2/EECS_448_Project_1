@@ -3,6 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Resets the second count to zero when clicked
  * 
+ * Citation for image used: reset button:
+ * http://optimus5.com/index.php?page=search/images&search=restart+button&type=images
+ * 
  * @author Will Teeple
  * @version 1.2
  */
@@ -18,8 +21,8 @@ public class secondReset extends ClockMenu
     }    
     
     /**
-     * @pre : None
-     * @post : Creates a new object of type secondReset with designated image
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type secondReset with designated image
      * @return : None
      */
     public secondReset()
@@ -28,8 +31,8 @@ public class secondReset extends ClockMenu
     }
     
     /**
-     * @pre : Existing Clock and secondReset objects
-     * @post : Resets the second count to zero
+     * @param : (pre) Existing Clock and secondReset objects
+     * @param : (post) Resets the second count to zero
      * @return : None
      */
     public void toggle()
@@ -42,10 +45,4 @@ public class secondReset extends ClockMenu
             myClock.resetSec();
         }
     }
-    
-    /**
-     * Citation for image used: reset button
-     * 
-     * http://optimus5.com/index.php?page=search/images&search=restart+button&type=images
-     */
 }
