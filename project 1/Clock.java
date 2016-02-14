@@ -44,9 +44,11 @@ public class Clock extends Actor
         //clock.drawString(time, 5, 10);
         //setImage(time);
     }*/
-    //pre - none
-    //post - runs as the world is running
-    //return - none
+    /**
+    @param pre - none
+    @param post - runs as the world is running
+    @return - none
+    */
    public void act() 
     {
         // Add your action code here.
@@ -56,18 +58,22 @@ public class Clock extends Actor
         
         
     }
-    //pre - ints for hour, minute, and second
-    //post - sets the corresponding member variables
-    //return - none
+    /**
+    @param pre - ints for hour, minute, and second
+    @param post - sets the corresponding member variables
+    @return - none
+    */
     public void setTime(int hours, int minutes, int seconds)//sets the time with user input.
   {
       m_hour = hours;
       m_minute = minutes;
       m_second = seconds;
   }
-  //pre - none
-    //post - adds a minute to m_minute and includes case for wrap around time
-    //return - none
+  /**
+  @param pre - none
+    @param post - adds a minute to m_minute and includes case for wrap around time
+    @return - none
+  */
   public void addMin()
   {
        m_minute = m_minute + 1;
@@ -76,9 +82,11 @@ public class Clock extends Actor
                m_minute = 0;
            }
   }
-  //pre - none
-    //post - subtracts a minute to m_minute and includes case for wrap around time
-    //return - none
+  /**
+   @param pre - none
+    @param post - subtracts a minute to m_minute and includes case for wrap around time
+    /@return - none
+  */
   public void minusMin()
   {
       m_minute = m_minute - 1;
@@ -87,9 +95,11 @@ public class Clock extends Actor
                 m_minute = 59;
             }
   }
-  //pre - none
-    //post - adds an hour to m_hour and includes case for wrap around time
-    //return - none
+  /**
+  @param pre - none
+    @param post - adds an hour to m_hour and includes case for wrap around time
+    @return - none
+    */
   public void addHr()
   {
         m_hour = m_hour + 1; 
@@ -109,9 +119,11 @@ public class Clock extends Actor
                 }
             }
   }
-  //pre - none
-    //post - subtracts an hour to m_hour and includes case for wrap around time
-    //return - none
+  /**
+  @param pre - none
+    @param post - subtracts an hour to m_hour and includes case for wrap around time
+    @return - none
+  */
   public void minusHr()
   {
         m_hour = m_hour - 1;
@@ -131,9 +143,11 @@ public class Clock extends Actor
                 }
             }
   }
-  //pre - none
-    //post - sets the clock to 24 hour mode
-    //return - none
+  /**
+  @param pre - none
+    @param post - sets the clock to 24 hour mode
+    @return - none
+  */
   public void hour24()
   {
       is24Hour(true);
@@ -149,9 +163,11 @@ public class Clock extends Actor
           m_hour = ((m_hour % 12) + 12);
       }
   }
-  //pre - none
-    //post - sets the clock to 12 hour mode
-    //return - none
+  /**
+   @param pre - none
+    @param post - sets the clock to 12 hour mode
+    @return - none
+    */
   public void hour12()
   {
       is24Hour(false);
@@ -167,9 +183,11 @@ public class Clock extends Actor
           m_hour = (m_hour % 12);
       }
   }
-  //pre - boolean for time being 12 or 24 hour mode
-    //post - sets the m_timeUpperBound corresponding to the hour mode
-    //return - none
+  /**
+  @param pre - boolean for time being 12 or 24 hour mode
+    @param post - sets the m_timeUpperBound corresponding to the hour mode
+    @return - none
+  */
   public void is24Hour(boolean time)//sets the boundary for 24 hour clock or 12 hour clock.
   {
     if(time == true)
@@ -181,9 +199,11 @@ public class Clock extends Actor
       m_timeUpperBound = 12;
     }
   }
-  //pre - boolean for the time of day
-    //post - sets the time of day to AM if true and PM if false
-    //return - none
+  /**
+   @param pre - boolean for the time of day
+    @param post - sets the time of day to AM if true and PM if false
+    @return - none
+  */
   public void isAM(boolean AM)//tells the if the time is AM or PM or 12 hour
   {
     if(AM == true)
@@ -197,9 +217,11 @@ public class Clock extends Actor
      m_timeOfDay = "P.M.";
     }
   }
-  //pre - none
-    //post - displays the clock based on the time of day and hour mode of the clock
-    //return - none
+  /**
+   @param pre - none
+    @param post - displays the clock based on the time of day and hour mode of the clock
+    @return - none
+  */
   public void displayClock()//prints out the time of the clock
   {
      if(m_timeUpperBound == 24)
@@ -215,9 +237,11 @@ public class Clock extends Actor
        setImage(new GreenfootImage(m_hour + ":" + m_minute + ":" + m_second + " " + m_timeOfDay, 30, null, null)); 
      }
   }
-  //pre - none
-    //post - calculates the time of the clock
-    //return - none
+  /**
+   @param pre - none
+    @param post - calculates the time of the clock
+    @return - none
+  */
   public void calculateTime()//this calculates the time for the clock
   {
       timeNow = System.currentTimeMillis();//This grabs the system clock time in milliseconds
