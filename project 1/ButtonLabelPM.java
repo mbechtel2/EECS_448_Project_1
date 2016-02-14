@@ -12,18 +12,22 @@ public class ButtonLabelPM extends Actor
      * Act - do whatever the ButtonLabelPM wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     //pre - none
-    //post - constructs a instance of a button label
-    //return - none
+     /**
+     @param pre - none
+    @param post - constructs a instance of a button label
+    @return - none
+    */
     public ButtonLabelPM()
     {
         GreenfootImage PMLabel = new GreenfootImage (30, 30);
         PMLabel.drawString("P.M.", 5, 10);
         setImage(PMLabel);
     }
-    //pre - none
-    //post - runs as the world is running
-    //return - none
+    /**
+    @param pre - none
+    @parampost - runs as the world is running
+    @return - none
+    */
     public void act() 
     {
         // Add your action code here.
