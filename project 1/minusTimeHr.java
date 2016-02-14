@@ -13,9 +13,11 @@ public class minusTimeHr extends Clock
      * Act - do whatever the minusTimeHr wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     //pre - none
-    //post - runs as the world is running
-    //return - none
+     /**
+      @param pre - none
+    @param post - runs as the world is running
+    @return - none
+    */
     public void act() 
     {
         // Add your action code here.
