@@ -15,6 +15,9 @@ public class ClockWorld extends World
     minuteUp mup = new minuteUp();
     minuteDown mdown = new minuteDown();
     secondReset rsSec = new secondReset();
+    stopwatch stp = new stopwatch();
+    timer tmr = new timer();
+    start srt = new start();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -48,6 +51,11 @@ public class ClockWorld extends World
         //add second reset button
         addObject(rsSec, 570, 255);
         addObject(new secLabel(), 570, 215);
+        
+        //add timer, stopwatch, and start buttons
+        addObject(stp, 210, 225);
+        addObject(tmr, 350, 225);
+        addObject(srt, 280, 270);
     }
     
     /** 
