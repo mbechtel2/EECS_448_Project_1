@@ -18,6 +18,8 @@ public class ClockWorld extends World
     stopwatch stp = new stopwatch();
     timer tmr = new timer();
     start srt = new start();
+    date dte = new date();
+    dateUp dteUp = new dateUp();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -26,14 +28,21 @@ public class ClockWorld extends World
     public ClockWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 300, 1);      
+        super(600, 350, 1);      
         setBackground(new GreenfootImage("clockFace.png"));
         
         //set default clock message
         mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
+        
+        //set default date message
+        dte.setImage(new GreenfootImage("Date: " + dte.getDayName() + " " + dte.getMonth() + " " + dte.getDay(), 35, null, null));
 
         //add clock display
         addObject(mainClock, 300, 100);
+        
+        //add date display
+        addObject(dte, 175, 330);
+        addObject(dteUp, 500, 330);
         
         //add 12/24 hour toggle button
         addObject(toggle, 70, 248);
@@ -66,5 +75,10 @@ public class ClockWorld extends World
     public Clock getClock()
     {
         return mainClock;
+    }
+    
+    public date getDate()
+    {
+        return dte;
     }
 }

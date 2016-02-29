@@ -7,4 +7,6 @@ comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=Clock\ getClock()
 comment2.text=\ \r\n\ @param\ \:\ (pre)\ Existing\ Clock\ object\r\n\ @param\ \:\ (post)\ None\r\n\ @return\ \:\ Returns\ the\ main\ Clock\ object\ in\ the\ world\r\n
-numComments=3
+comment3.params=
+comment3.target=date\ getDate()
+numComments=4

@@ -1,35 +1,35 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class start here.
+ * Write a description of class dateUp here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class start extends ClockMenu
+public class dateUp extends ClockMenu
 {
     /**
-     * Act - do whatever the start wants to do. This method is called whenever
+     * Act - do whatever the dateUp wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        begin();
-    } 
+        incrementDate();
+    }    
     
-    public start()
+    public dateUp()
     {
-        setImage("start.png");
+        setImage("plus.png");
     }
     
-    public void begin()
+    public void incrementDate()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();
-        Clock myClock = worldClock.getClock();
+        date myDate = worldClock.getDate();
         
         if (Greenfoot.mouseClicked(this))
         {
-                myClock.startCycle = true;
+            myDate.incrementDate();
         }
     }
 }

@@ -33,6 +33,11 @@ public class Clock extends Actor
     public long timeNow = 0; //time comparison variable
     public long startTime = System.currentTimeMillis(); //time snapshot
     public String m_timeOfDay = "A.M."; //AM/PM output string
+    public boolean clockMode = true;
+    public boolean stopwatchMode = false;
+    public boolean timerMode = false;
+    public boolean startCycle = false;
+    public int m_secondsLost = 0;
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever
@@ -40,9 +45,20 @@ public class Clock extends Actor
      */
     public void act() 
     {
-        this.calculateTime();
-
-        if (get24Hour() == false)
+      if(clockMode)
+      {
+          this.calculateTime();
+      }
+      else if(stopwatchMode && startCycle)
+      {
+           this.calculateTime();
+      }
+      else if(timerMode && startCycle)
+      {
+          this.decrementTime();
+      }
+      
+      if (get24Hour() == false)
         {
             if (m_hour < 10)
             {
@@ -148,7 +164,7 @@ public class Clock extends Actor
                 }
             }
         }
-    }    
+   }    
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
     /**
@@ -473,6 +489,86 @@ public class Clock extends Actor
             {
                 m_minute = 0;
                 m_hour +=1;
+
+                if(m_timeUpperBound == 24)
+                {
+                    if(((m_hour == 24) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
+                    {
+                        m_hour = 0;
+                    }
+                }
+                else
+                {
+                    if(m_timeZone == true)
+                    {
+                        if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
+                        {
+                            m_timeZone = false;
+                        }
+                        else if(((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
+                        {
+                            m_hour = 1;
+                        }
+                    }
+                    else
+                    {
+                        if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
+                        {
+                            m_timeZone = true;
+                        }
+                        else if(!((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
+                        {
+                            m_hour = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        this.isAM(m_timeZone);
+    }
+    
+    public int getTotalSeconds()
+    {
+        int hours = m_hour * 3600;
+        int minutes = m_minute * 60;
+        int seconds = hours + minutes + m_second;
+        
+        return seconds;
+    }
+    
+    public void decrementTime()
+    {
+        timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
+        
+        if (timeNow >= 100 && m_hour >= 0)
+        {
+            timeNow = 0;
+            startTime = System.currentTimeMillis();
+            m_second -= 1;
+        }
+        else if(m_hour < 0)
+        {
+            m_hour = 0;
+            m_minute = 0;
+            m_second = 0;
+        }
+
+        /*
+        while(timeNow != timeLater)//This delays the process by one second
+        {
+        timeNow = System.currentTimeMillis();
+        }
+         */
+        if(m_second < 0)
+        {
+            m_second = 59;
+            m_minute -= 1;
+
+            if(m_minute < 0)
+            {
+                m_minute = 59;
+                m_hour -=1;
 
                 if(m_timeUpperBound == 24)
                 {

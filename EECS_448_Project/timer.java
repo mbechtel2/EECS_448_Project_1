@@ -30,6 +30,10 @@ public class timer extends ClockMenu
         if (Greenfoot.mouseClicked(this))
         {
             myClock.m_timeUpperBound = 24;
+            myClock.clockMode = false;
+            myClock.stopwatchMode = false;
+            myClock.timerMode = true;
+            myClock.startCycle = false;
             myClock.setTime(0,0,0);
         }
     }
