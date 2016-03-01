@@ -39,7 +39,7 @@ public class Clock extends Actor
     public boolean startCycle = false;
     public int m_secondsLost = 0;
     
-    ClockWorld worldClock = (ClockWorld) getWorld();
+    
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever
@@ -47,20 +47,22 @@ public class Clock extends Actor
      */
     public void act() 
     {
+      ClockWorld worldClock = (ClockWorld) getWorld();  
+        
       if(clockMode)
       {
           this.calculateTime();
       }
       else if(stopwatchMode && startCycle)
       {
-           this.calculateTime();
+          this.calculateTime();
       }
       else if(timerMode && startCycle)
       {
           this.decrementTime();
       }
       
-      if (get24Hour() == false)
+      if (get24Hour() == false && worldClock.displayOn)
         {
             if (m_hour < 10)
             {
@@ -68,22 +70,22 @@ public class Clock extends Actor
                 {
                     if (m_second < 10)
                     {
-                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                     else
                     {
-                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                 }
                 else
                 {
                     if (m_second < 10)
                     {
-                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                     else
                     {
-                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                 }
             }
@@ -93,79 +95,83 @@ public class Clock extends Actor
                 {
                     if (m_second < 10)
                     {
-                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                     else
                     {
-                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                 }
                 else
                 {
                     if (m_second < 10)
                     {
-                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                     else
                     {
-                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, 95, null, null));
+                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second + " " + m_timeOfDay, worldClock.getFontSize(), null, null));
                     }
                 }
             }
-        }
-        else
-        {
-            if (m_hour < 10)
-            {
-                if (m_minute < 10)
-                {
-                    if (m_second < 10)
-                    {
-                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second, 95, null, null));
-                    }
-                    else
-                    {
-                        setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second, 95, null, null));
-                    }
-                }
-                else
-                {
-                    if (m_second < 10)
-                    {
-                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second, 95, null, null));
-                    }
-                    else
-                    {
-                        setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second, 95, null, null));
-                    }
-                }
-            }
-            else
-            {
-                if (m_minute < 10)
-                {
-                    if (m_second < 10)
-                    {
-                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second, 95, null, null));
-                    }
-                    else
-                    {
-                        setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second, 95, null, null));
-                    }
-                }
-                else
-                {
-                    if (m_second < 10)
-                    {
-                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second, 95, null, null));
-                    }
-                    else
-                    {
-                        setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, 95, null, null));
-                    }
-                }
-            }
-        }
+      }
+      else if (get24Hour() == true && worldClock.displayOn)
+      {
+          if (m_hour < 10)
+          {
+              if (m_minute < 10)
+              {
+                  if (m_second < 10)
+                  {
+                      setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : 0" + m_second, worldClock.getFontSize(), null, null));
+                  }
+                  else
+                  {
+                      setImage(new GreenfootImage("0" + m_hour + " : 0" + m_minute + " : " + m_second, worldClock.getFontSize(), null, null));
+                  }
+              }
+              else
+              {
+                  if (m_second < 10)
+                  {
+                      setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : 0" + m_second, worldClock.getFontSize(), null, null));
+                  }
+                  else
+                  {
+                      setImage(new GreenfootImage("0" + m_hour + " : " + m_minute + " : " + m_second, worldClock.getFontSize(), null, null));
+                  }
+              }
+          }
+          else
+          {
+              if (m_minute < 10)
+              {
+                  if (m_second < 10)
+                  {
+                      setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : 0" + m_second, worldClock.getFontSize(), null, null));
+                  }
+                  else
+                  {
+                      setImage(new GreenfootImage(m_hour + " : 0" + m_minute + " : " + m_second, worldClock.getFontSize(), null, null));
+                 }
+              }
+              else
+              {
+                  if (m_second < 10)
+                  {
+                      setImage(new GreenfootImage(m_hour + " : " + m_minute + " : 0" + m_second, worldClock.getFontSize(), null, null));
+                  }
+                  else
+                  {
+                      setImage(new GreenfootImage(m_hour + " : " + m_minute + " : " + m_second, worldClock.getFontSize(), null, null));
+                  }
+              }
+          }
+      }
+      else if (worldClock.displayOn == false)
+      {
+          setImage(new GreenfootImage("", worldClock.getFontSize(), null, null));
+      }
    }    
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 

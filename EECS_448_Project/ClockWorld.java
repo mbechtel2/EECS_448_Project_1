@@ -23,8 +23,11 @@ public class ClockWorld extends World
     display dsp = new display();
     stop pause = new stop();
     clockMode clkMode = new clockMode();
+    fontUp fntUp = new fontUp();
+    fontDown fntDown = new fontDown();
     
-    public boolean displayOn = true;
+    public boolean displayOn;
+    private int fontSize = 95;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -36,10 +39,13 @@ public class ClockWorld extends World
         super(600, 350, 1);      
         setBackground(new GreenfootImage("clockFace.png"));
         
+        displayOn = true;
+        fontSize = 95;
+        
         //set default clock message
         if(displayOn)
         {
-            mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
+            mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), fontSize, null, null));
         }
         else
         {
@@ -82,6 +88,10 @@ public class ClockWorld extends World
         
         //add on/off display button
         addObject(dsp, 525, 30);
+        
+        //add font up and down buttons
+        addObject(fntUp, 500, 165);
+        addObject(fntDown, 550, 165);
     }
     
     /** 
@@ -102,5 +112,15 @@ public class ClockWorld extends World
     public boolean getDisplayOn()
     {
         return displayOn;
+    }
+    
+    public int getFontSize()
+    {
+        return fontSize;
+    }
+    
+    public void setFontSize(int newSize)
+    {
+        fontSize = newSize;
     }
 }

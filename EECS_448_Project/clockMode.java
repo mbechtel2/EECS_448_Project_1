@@ -14,7 +14,7 @@ public class clockMode extends ClockMenu
      */
     public void act() 
     {
-        // Add your action code here.
+        changeMode();
     }    
     
     public clockMode()
