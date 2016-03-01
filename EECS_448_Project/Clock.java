@@ -468,6 +468,18 @@ public class Clock extends Actor
         m_second = 0;
         startTime = System.currentTimeMillis();
     }
+    
+    public void resetMin()
+    {
+        m_minute = 0;
+        startTime = System.currentTimeMillis();
+    }
+    
+    public void resetHour()
+    {
+        m_hour = 0;
+        startTime = System.currentTimeMillis();
+    }
 
     /**
      * Updates the time of the clock appropriately, incrementing minutes/hours when necessary
