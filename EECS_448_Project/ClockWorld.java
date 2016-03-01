@@ -20,6 +20,11 @@ public class ClockWorld extends World
     start srt = new start();
     date dte = new date();
     dateUp dteUp = new dateUp();
+    display dsp = new display();
+    stop pause = new stop();
+    clockMode clkMode = new clockMode();
+    
+    public boolean displayOn = true;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -32,7 +37,14 @@ public class ClockWorld extends World
         setBackground(new GreenfootImage("clockFace.png"));
         
         //set default clock message
-        mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
+        if(displayOn)
+        {
+            mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), 95, null, null));
+        }
+        else
+        {
+            mainClock.setImage(new GreenfootImage("", 95, null, null));
+        }
         
         //set default date message
         dte.setImage(new GreenfootImage("Date: " + dte.getDayName() + " " + dte.getMonth() + " " + dte.getDay(), 35, null, null));
@@ -42,7 +54,7 @@ public class ClockWorld extends World
         
         //add date display
         addObject(dte, 175, 330);
-        addObject(dteUp, 500, 330);
+        addObject(dteUp, 470, 330);
         
         //add 12/24 hour toggle button
         addObject(toggle, 70, 248);
@@ -62,9 +74,14 @@ public class ClockWorld extends World
         addObject(new secLabel(), 570, 215);
         
         //add timer, stopwatch, and start buttons
-        addObject(stp, 210, 225);
-        addObject(tmr, 350, 225);
-        addObject(srt, 280, 270);
+        addObject(clkMode, 210, 210);
+        addObject(stp, 210, 245);
+        addObject(tmr, 210, 285);
+        addObject(srt, 360, 220);
+        addObject(pause, 360, 265);
+        
+        //add on/off display button
+        addObject(dsp, 525, 30);
     }
     
     /** 
@@ -80,5 +97,10 @@ public class ClockWorld extends World
     public date getDate()
     {
         return dte;
+    }
+    
+    public boolean getDisplayOn()
+    {
+        return displayOn;
     }
 }

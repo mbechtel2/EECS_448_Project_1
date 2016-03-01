@@ -10,8 +10,10 @@ public class date extends ClockMenu
 {
     public int day = 0;
     public int month = 0;
+    public int monthIndex = 0;
     public String[] days = {"Friday","Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
     public String[] months = {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"};
+    public int[] daysInAMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     /**
      * Act - do whatever the date wants to do. This method is called whenever
@@ -36,8 +38,16 @@ public class date extends ClockMenu
     
     public void incrementDate()
     {
-        day++;
-           
+        if(day== daysInAMonth[monthIndex] - 1)
+        {
+            monthIndex++;
+            month++;
+        }
+        else
+        {
+            day++;
+        }
+        
         this.setImage(new GreenfootImage("Date: " + this.getDayName() + " " + this.getMonth() + " " + this.getDay(), 35, null, null));
     }
     

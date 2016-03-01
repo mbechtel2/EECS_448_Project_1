@@ -38,6 +38,8 @@ public class Clock extends Actor
     public boolean timerMode = false;
     public boolean startCycle = false;
     public int m_secondsLost = 0;
+    
+    ClockWorld worldClock = (ClockWorld) getWorld();
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever

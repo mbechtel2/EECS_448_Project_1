@@ -9,4 +9,6 @@ comment2.target=Clock\ getClock()
 comment2.text=\ \r\n\ @param\ \:\ (pre)\ Existing\ Clock\ object\r\n\ @param\ \:\ (post)\ None\r\n\ @return\ \:\ Returns\ the\ main\ Clock\ object\ in\ the\ world\r\n
 comment3.params=
 comment3.target=date\ getDate()
-numComments=4
+comment4.params=
+comment4.target=boolean\ getDisplayOn()
+numComments=5
