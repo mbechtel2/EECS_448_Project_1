@@ -38,7 +38,7 @@ public class Clock extends Actor
     public boolean timerMode = false;
     public boolean startCycle = false;
     public int m_secondsLost = 0;
-    
+    public Clock tempClock =  this;
     
 
     /**
@@ -47,21 +47,27 @@ public class Clock extends Actor
      */
     public void act() 
     {
-      ClockWorld worldClock = (ClockWorld) getWorld();  
-        
+      ClockWorld worldClock = (ClockWorld) getWorld(); 
+              
       if(clockMode)
       {
           this.calculateTime();
       }
-      else if(stopwatchMode && startCycle)
-      {
-          this.calculateTime();
+      else if(stopwatchMode)
+      {          
+          if(startCycle)
+          {
+              this.calculateTime();
+          }
       }
       else if(timerMode && startCycle)
       {
-          this.decrementTime();
-      }
-      
+          if(startCycle)
+          {
+              this.decrementTime();
+          }
+        }
+        
       if (get24Hour() == false && worldClock.displayOn)
         {
             if (m_hour < 10)
@@ -460,6 +466,18 @@ public class Clock extends Actor
     public void resetSec()
     {
         m_second = 0;
+        startTime = System.currentTimeMillis();
+    }
+    
+    public void resetMin()
+    {
+        m_minute = 0;
+        startTime = System.currentTimeMillis();
+    }
+    
+    public void resetHour()
+    {
+        m_hour = 0;
         startTime = System.currentTimeMillis();
     }
 

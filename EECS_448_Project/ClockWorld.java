@@ -20,6 +20,7 @@ public class ClockWorld extends World
     start srt = new start();
     date dte = new date();
     dateUp dteUp = new dateUp();
+    dateDown dteDown = new dateDown();
     display dsp = new display();
     stop pause = new stop();
     clockMode clkMode = new clockMode();
@@ -59,8 +60,9 @@ public class ClockWorld extends World
         addObject(mainClock, 300, 100);
         
         //add date display
-        addObject(dte, 175, 330);
+        addObject(dte, 225, 330);
         addObject(dteUp, 470, 330);
+        addObject(dteDown, 520, 330);
         
         //add 12/24 hour toggle button
         addObject(toggle, 70, 248);

@@ -42,7 +42,16 @@ public class secondReset extends ClockMenu
         
         if (Greenfoot.mouseClicked(this))
         {
-            myClock.resetSec();
+            if(myClock.stopwatchMode == true)
+            {
+                myClock.resetSec();
+                myClock.resetMin();
+                myClock.resetHour();
+            }
+            else
+            {
+                myClock.resetSec();
+            }
         }
     }
 }
