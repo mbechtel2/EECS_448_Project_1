@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class date extends ClockMenu
 {
     public int day = 0;
+    public int tempDay = 0;
     public int month = 0;
     public int monthIndex = 0;
     public String[] days = {"Friday","Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
@@ -38,16 +39,36 @@ public class date extends ClockMenu
     
     public void incrementDate()
     {
-        if(day== daysInAMonth[monthIndex] - 1)
+        if(day == daysInAMonth[monthIndex] - 1)
         {
             monthIndex++;
             month++;
+            day = 0;
+            tempDay++;
         }
         else
         {
             day++;
+            tempDay++;
         }
         
+        this.setImage(new GreenfootImage("Date: " + this.getDayName() + " " + this.getMonth() + " " + this.getDay(), 35, null, null));
+    }
+    
+    public void decrementDate()
+    {
+        if(day > 0 && tempDay > 0)
+        {
+            day--;
+            tempDay--;
+        }
+        else if(tempDay > 0)
+        {
+            tempDay--;
+            monthIndex--;
+            month--;
+            day = daysInAMonth[month] - 1;
+        }        
         this.setImage(new GreenfootImage("Date: " + this.getDayName() + " " + this.getMonth() + " " + this.getDay(), 35, null, null));
     }
     
@@ -58,7 +79,7 @@ public class date extends ClockMenu
     
     public String getDayName()
     {
-        return days[day % 7];
+        return days[tempDay % 7];
     }
     
     public String getMonth()
