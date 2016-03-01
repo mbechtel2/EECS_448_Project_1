@@ -19,7 +19,7 @@ public class fontUp extends ClockMenu
     
     public fontUp()
     {
-        setImage("plus.png");
+        setImage("plus_grey.png");
     }
     
     public void increaseFont()
