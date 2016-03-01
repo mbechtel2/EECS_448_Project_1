@@ -60,7 +60,7 @@ public class ClockWorld extends World
         addObject(mainClock, 300, 100);
         
         //add date display
-        addObject(dte, 175, 330);
+        addObject(dte, 225, 330);
         addObject(dteUp, 470, 330);
         addObject(dteDown, 520, 330);
         
