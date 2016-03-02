@@ -31,6 +31,7 @@ comment18.target=Clock\ createTempClock()
 comment18.text=\r\n\ @param\ \:\ (pre)\ A\ clock\ object\ already\ exists\r\n\ @param\ \:\ (post)\ A\ copy\ of\ the\ current\ clock\ object\ will\ be\ created\r\n\ @return\ \:\ The\ copy\ clock\ object\r\n
 comment19.params=temp
 comment19.target=void\ resetClock(Clock)
+comment19.text=\r\n\ @param\ \:\ (pre)\ Two\ clock\ objects\ exits\r\n\ @param\ \:\ (post)\ The\ current\ Clock\ object\ will\ resemble\ the\ Clock\ object\ passed\ as\ a\ parameter\r\n\ @return\ \:\ None\r\n
 comment2.params=
 comment2.target=Clock()
 comment2.text=\r\n\ Clock\ constructor,\ sets\ time\ to\ 12\:00\:00\ AM\r\n\ \r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ Clock\ with\ default\ time\ 12\:00\:00\r\n\ @return\ \:\ None\r\n

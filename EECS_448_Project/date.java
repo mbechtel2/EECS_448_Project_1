@@ -57,7 +57,14 @@ public class date extends ClockMenu
      */
     public void incrementDate()
     {
-        if(day == daysInAMonth[monthIndex] - 1)
+        if(day == daysInAMonth[monthIndex] - 1 && monthIndex >= 11)
+        {
+            tempDay = 0;
+            monthIndex = 0;
+            month = 0;
+            day = 0;
+        }
+        else if(day == daysInAMonth[monthIndex] - 1)
         {
             monthIndex++;
             month++;

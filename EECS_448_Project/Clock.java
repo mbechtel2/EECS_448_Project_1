@@ -47,6 +47,7 @@ public class Clock extends Actor
     public void act() 
     {
       ClockWorld worldClock = (ClockWorld) getWorld(); 
+      date myDate = worldClock.getDate();
               
       if(clockMode)
       {
@@ -354,7 +355,7 @@ public class Clock extends Actor
      * @return : None
      */
     public void changeHour(boolean up)
-    {
+    {      
         if (up == true)
         {
             if (get24Hour() == true)
@@ -493,9 +494,12 @@ public class Clock extends Actor
      */
     public void calculateTime()//this calculates the time for the clock
     {
+         ClockWorld worldClock = (ClockWorld) getWorld(); 
+        date myDate = worldClock.getDate();
+        
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
         
-        if (timeNow >= 1000)
+        if (timeNow >= 100)
         {
             timeNow = 0;
             startTime = System.currentTimeMillis();
@@ -523,6 +527,7 @@ public class Clock extends Actor
                 {
                     if(((m_hour == 24) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                     {
+                        myDate.incrementDate();
                         m_hour = 0;
                     }
                 }
@@ -532,10 +537,12 @@ public class Clock extends Actor
                     {
                         if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                         {
+                            myDate.incrementDate();
                             m_timeZone = false;
                         }
                         else if(((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                         {
+                            myDate.incrementDate();
                             m_hour = 1;
                         }
                     }
@@ -543,10 +550,12 @@ public class Clock extends Actor
                     {
                         if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                         {
+                            myDate.incrementDate();
                             m_timeZone = true;
                         }
                         else if(!((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                         {
+                            myDate.incrementDate();
                             m_hour = 1;
                         }
                     }
