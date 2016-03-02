@@ -126,4 +126,9 @@ public class ClockWorld extends World
     {
         fontSize = newSize;
     }
+    
+    public void changeDate()
+    {
+        dte.incrementDate();
+    }
 }

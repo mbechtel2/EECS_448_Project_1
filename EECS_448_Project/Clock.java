@@ -39,6 +39,7 @@ public class Clock extends Actor
     public boolean startCycle = false;
     public int m_secondsLost = 0;
     public Clock tempClock;
+    public boolean isMainClock = true;
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever
@@ -47,7 +48,7 @@ public class Clock extends Actor
     public void act() 
     {
       ClockWorld worldClock = (ClockWorld) getWorld(); 
-      date myDate = worldClock.getDate();
+      Clock tempClk = worldClock.tempClock;
               
       if(clockMode)
       {
@@ -55,7 +56,7 @@ public class Clock extends Actor
       }
       else if(stopwatchMode)
       {        
-          worldClock.tempClock.calculateTime();
+          tempClk.calculateTime();
           
           if(startCycle)
           {
@@ -64,7 +65,7 @@ public class Clock extends Actor
       }
       else if(timerMode && startCycle)
       {
-          worldClock.tempClock.calculateTime();
+          tempClk.calculateTime();
           
           if(startCycle)
           {
@@ -494,9 +495,7 @@ public class Clock extends Actor
      */
     public void calculateTime()//this calculates the time for the clock
     {
-         ClockWorld worldClock = (ClockWorld) getWorld(); 
-        date myDate = worldClock.getDate();
-        
+        ClockWorld worldClock = (ClockWorld) getWorld(); 
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
         
         if (timeNow >= 100)
@@ -512,7 +511,6 @@ public class Clock extends Actor
         timeNow = System.currentTimeMillis();
         }
          */
-
         if(m_second == 60)
         {
             m_second = 0;
@@ -527,7 +525,7 @@ public class Clock extends Actor
                 {
                     if(((m_hour == 24) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                     {
-                        myDate.incrementDate();
+                        worldClock.changeDate();
                         m_hour = 0;
                     }
                 }
@@ -537,12 +535,12 @@ public class Clock extends Actor
                     {
                         if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                         {
-                            myDate.incrementDate();
+                            worldClock.changeDate();
                             m_timeZone = false;
                         }
                         else if(((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                         {
-                            myDate.incrementDate();
+                            worldClock.changeDate();
                             m_hour = 1;
                         }
                     }
@@ -550,12 +548,12 @@ public class Clock extends Actor
                     {
                         if(((m_hour == 12) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time zone
                         {
-                            myDate.incrementDate();
+                            worldClock.changeDate();
                             m_timeZone = true;
                         }
                         else if(!((m_hour == 13) && (m_minute == 0) && (m_second == 0)))//helps for the wrap around time
                         {
-                            myDate.incrementDate();
+                            worldClock.changeDate();
                             m_hour = 1;
                         }
                     }
@@ -588,7 +586,6 @@ public class Clock extends Actor
     public void decrementTime()
     {
         ClockWorld worldClock = (ClockWorld) getWorld(); 
-        
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
         
         if (timeNow >= 1000 && m_hour >= 0)
@@ -610,6 +607,9 @@ public class Clock extends Actor
         timeNow = System.currentTimeMillis();
         }
          */
+        
+        
+        
         if(m_second < 0)
         {
             m_second = 59;
@@ -670,6 +670,7 @@ public class Clock extends Actor
         tempClock.m_minute = this.m_minute;
         tempClock.m_second = this.m_second;
         tempClock.m_timeUpperBound = this.m_timeUpperBound;
+        tempClock.isMainClock = false;
         
         return tempClock;
     }
