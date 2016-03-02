@@ -38,8 +38,7 @@ public class Clock extends Actor
     public boolean timerMode = false;
     public boolean startCycle = false;
     public int m_secondsLost = 0;
-    public Clock tempClock =  this;
-    
+    public Clock tempClock;
 
     /**
      * Act - do whatever the Clock wants to do. This method is called whenever
@@ -54,7 +53,9 @@ public class Clock extends Actor
           this.calculateTime();
       }
       else if(stopwatchMode)
-      {          
+      {        
+          worldClock.tempClock.calculateTime();
+          
           if(startCycle)
           {
               this.calculateTime();
@@ -62,6 +63,8 @@ public class Clock extends Actor
       }
       else if(timerMode && startCycle)
       {
+          worldClock.tempClock.calculateTime();
+          
           if(startCycle)
           {
               this.decrementTime();
@@ -575,9 +578,11 @@ public class Clock extends Actor
      */
     public void decrementTime()
     {
+        ClockWorld worldClock = (ClockWorld) getWorld(); 
+        
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
         
-        if (timeNow >= 100 && m_hour >= 0)
+        if (timeNow >= 1000 && m_hour >= 0)
         {
             timeNow = 0;
             startTime = System.currentTimeMillis();
@@ -642,6 +647,35 @@ public class Clock extends Actor
         }
 
         this.isAM(m_timeZone);
+    }
+    
+    /**
+     * @param : (pre) A clock object already exists
+     * @param : (post) A copy of the current clock object will be created
+     * @return : The copy clock object
+     */
+    public Clock createTempClock()
+    {
+        Clock tempClock = new Clock();
+        tempClock.m_hour = this.m_hour;
+        tempClock.m_minute = this.m_minute;
+        tempClock.m_second = this.m_second;
+        tempClock.m_timeUpperBound = this.m_timeUpperBound;
+        
+        return tempClock;
+    }
+    
+    /**
+     * @param : (pre) Two clock objects exits
+     * @param : (post) The current Clock object will resemble the Clock object passed as a parameter
+     * @return : None
+     */
+    public void resetClock(Clock temp)
+    {        
+        this.m_hour = temp.m_hour;
+        this.m_minute = temp.m_minute;
+        this.m_second = temp.m_second;
+        this.m_timeUpperBound = temp.m_timeUpperBound;
     }
 }
 

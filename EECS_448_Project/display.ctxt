@@ -9,4 +9,5 @@ comment2.target=display()
 comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ display\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ changeDisplay()
+comment3.text=\r\n\ @param\ \:\ (pre)\ Both\ a\ Clock\ and\ a\ display\ object\ already\ exist\r\n\ @param\ \:\ (post)\ The\ display\ will\ be\ turned\ off\ if\ already\ on,\ or\ on\ if\ already\ off\r\n\ @return\ \:\ None\r\n
 numComments=4

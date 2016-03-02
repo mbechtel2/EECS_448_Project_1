@@ -9,4 +9,5 @@ comment2.target=stopwatch()
 comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ stopwatch\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ changeMode()
+comment3.text=\r\n\ @param\ \:\ (pre)\ Both\ a\ Clock\ and\ a\ stopwatch\ object\ already\ exist\r\n\ @param\ \:\ (post)\ Changes\ the\ mode\ of\ the\ program\ to\ that\ of\ a\ stopwatch.\r\n\ @return\ \:\ None\r\n
 numComments=4

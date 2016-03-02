@@ -39,12 +39,11 @@ public class clockMode extends ClockMenu
         
         if (Greenfoot.mouseClicked(this))
         {
-            myClock.m_timeUpperBound = 24;
+            myClock.resetClock(worldClock.tempClock);
             myClock.clockMode = true;
             myClock.stopwatchMode = false;
             myClock.timerMode = false;
             myClock.startCycle = true;
-            myClock.setTime(0,0,0);
         }
     }
 }

@@ -9,4 +9,5 @@ comment2.target=fontDown()
 comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ fontDown\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ decreaseFont()
+comment3.text=\r\n\ @param\ \:\ (pre)\ A\ fontDown\ object\ already\ exists\r\n\ @param\ \:\ (post)\ Decreases\ the\ font\ size\ by\ 5.\r\n\ @return\ \:\ None\r\n
 numComments=4

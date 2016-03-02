@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ClockWorld extends World
 {
     Clock mainClock = new Clock();
+    Clock tempClock = mainClock.createTempClock();
     Toggle24 toggle = new Toggle24();
     hourUp hup = new hourUp();
     hourDown hdown = new hourDown();

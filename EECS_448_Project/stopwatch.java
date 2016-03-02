@@ -39,6 +39,11 @@ public class stopwatch extends ClockMenu
         
         if (Greenfoot.mouseClicked(this))
         {
+            if(myClock.clockMode)
+            {
+                worldClock.tempClock = myClock.createTempClock();
+            }
+            
             myClock.m_timeUpperBound = 24;
             myClock.clockMode = false;
             myClock.stopwatchMode = true;
