@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class stopwatch here.
+ * Used to change the mode to Stopwatch mode.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class stopwatch extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class stopwatch extends ClockMenu
         changeMode();
     }    
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type stopwatch with an initialized image
+     * @return : None
+     */
     public stopwatch()
     {
         setImage("stopwatch.png");
     }
     
+    /**
+     * @param : (pre) Both a Clock and a stopwatch object already exist
+     * @param : (post) Changes the mode of the program to that of a stopwatch.
+     * @return : None
+     */
     public void changeMode()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

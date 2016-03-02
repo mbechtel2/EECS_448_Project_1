@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class fontDown here.
+ * Used to decrease the font of the numbers displayed.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class fontDown extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class fontDown extends ClockMenu
         decreaseFont();
     }    
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type fontDown with an initialized image
+     * @return : None
+     */
     public fontDown()
     {
         setImage("minus.png");
     }
     
+    /**
+     * @param : (pre) A fontDown object already exists
+     * @param : (post) Decreases the font size by 5.
+     * @return : None
+     */
     public void decreaseFont()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

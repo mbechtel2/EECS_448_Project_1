@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class clockMode here.
+ * Used to change the current mode to Clock mode.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class clockMode extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class clockMode extends ClockMenu
         changeMode();
     }    
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type clockMode with an initialized image
+     * @return : None
+     */
     public clockMode()
     {
         setImage("clock.png");
     }
     
+    /**
+     * @param : (pre) Both a Clock and a clockMode object already exists
+     * @param : (post) Changes the mode of the program to that of a clock.
+     * @return : None
+     */
     public void changeMode()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

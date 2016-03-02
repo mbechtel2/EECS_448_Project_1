@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=dateUp
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ dateUp\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ move\ the\ date\ forward,\ one\ day\ at\ a\ time.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ dateUp\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=dateUp()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ dateUp\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ incrementDate()
+comment3.text=\r\n\ @param\ \:\ (pre)\ Both\ a\ date\ and\ a\ dateUp\ object\ already\ exist\r\n\ @param\ \:\ (post)\ Increases\ the\ numeric\ value\ of\ the\ date's\ day\ value\ by\ 1\ \r\n\ @return\ \:\ None\r\n
 numComments=4

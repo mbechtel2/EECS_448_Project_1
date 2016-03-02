@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=stop
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ stop\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ pause\ the\ stopwatch\ or\ timer.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ stop\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=stop()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ stop\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ stopClock()
+comment3.text=\r\n\ @param\ \:\ (pre)\ Both\ a\ Clock\ and\ a\ stop\ object\ already\ exist.\r\n\ @param\ \:\ (post)\ Pauses\ the\ stopwatch\ or\ timer.\r\n\ @return\ \:\ None\r\n
 numComments=4

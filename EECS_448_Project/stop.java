@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class stop here.
+ * Used to pause the stopwatch or timer.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 0
  */
 public class stop extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class stop extends ClockMenu
         stopClock();
     }    
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type stop with an initialized image
+     * @return : None
+     */
     public stop()
     {
         setImage("stop.png");
     }
     
+    /**
+     * @param : (pre) Both a Clock and a stop object already exist.
+     * @param : (post) Pauses the stopwatch or timer.
+     * @return : None
+     */
     public void stopClock()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

@@ -554,6 +554,11 @@ public class Clock extends Actor
         this.isAM(m_timeZone);
     }
     
+    /**
+     * @param : (pre) A clock object already exists
+     * @param : (post) None
+     * @return : The current time in seconds
+     */
     public int getTotalSeconds()
     {
         int hours = m_hour * 3600;
@@ -563,6 +568,11 @@ public class Clock extends Actor
         return seconds;
     }
     
+    /**
+     * @param : (pre) A clock object already exists
+     * @param : (post) Decreases the time by one second
+     * @return : None
+     */
     public void decrementTime()
     {
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot

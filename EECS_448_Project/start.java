@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class start here.
+ * Used to start the stopwatch and timer.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class start extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class start extends ClockMenu
         begin();
     } 
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type start with an initialized image
+     * @return : None
+     */
     public start()
     {
         setImage("start.png");
     }
     
+    /**
+     * @param : (pre) Both a Clock and a start object already exist
+     * @param : (post) Will tell the world to start the stopwatch or timer.
+     * @return : None
+     */
     public void begin()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

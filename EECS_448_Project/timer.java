@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class timer here.
+ * Used to change the mode to Timer mode.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class timer extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class timer extends ClockMenu
         changeMode();
     }  
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type timer with an initialized image
+     * @return : None
+     */
     public timer()
     {
         setImage("timer.png");
     }
     
+    /**
+     * @param : (pre) Both a Clock and a timer object already exist
+     * @param : (post) Changes the mode of the program to that of a timer.
+     * @return : None
+     */
     public void changeMode()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();

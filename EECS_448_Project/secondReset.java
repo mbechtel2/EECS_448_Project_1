@@ -3,11 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Resets the second count to zero when clicked
  * 
+ * Update: Resets the hours and minutes to zero for the stopwatch
+ * 
  * Citation for image used: reset button:
  * http://optimus5.com/index.php?page=search/images&search=restart+button&type=images
  * 
- * @author Will Teeple
- * @version 1.2
+ * @author Will Teeple, Michael Bechtel
+ * @version 1.3
  */
 public class secondReset extends ClockMenu
 {

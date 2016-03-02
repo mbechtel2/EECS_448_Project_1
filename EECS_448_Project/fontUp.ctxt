@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=fontUp
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ fontUp\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ increase\ the\ font\ of\ the\ displayed\ numbers.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ fontUp\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=fontUp()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ fontUp\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ increaseFont()
+comment3.text=\r\n\ @param\ \:\ (pre)\ A\ fontUp\ object\ already\ exists\r\n\ @param\ \:\ (post)\ Increases\ the\ font\ size\ by\ 5.\r\n\ @return\ \:\ None\r\n
 numComments=4

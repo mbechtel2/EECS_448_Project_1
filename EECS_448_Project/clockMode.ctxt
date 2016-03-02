@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=clockMode
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ clockMode\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ change\ the\ current\ mode\ to\ Clock\ mode.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ clockMode\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=clockMode()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ clockMode\ with\ an\ initialized\ image\r\n\ @return\ \:\ None\r\n
 comment3.params=
 comment3.target=void\ changeMode()
+comment3.text=\r\n\ @param\ \:\ (pre)\ Both\ a\ Clock\ and\ a\ clockMode\ object\ already\ exists\r\n\ @param\ \:\ (post)\ Changes\ the\ mode\ of\ the\ program\ to\ that\ of\ a\ clock.\r\n\ @return\ \:\ None\r\n
 numComments=4

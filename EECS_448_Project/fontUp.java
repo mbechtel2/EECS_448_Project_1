@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class fontUp here.
+ * Used to increase the font of the displayed numbers.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class fontUp extends ClockMenu
 {
@@ -17,11 +17,21 @@ public class fontUp extends ClockMenu
         increaseFont();
     }    
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type fontUp with an initialized image
+     * @return : None
+     */
     public fontUp()
     {
         setImage("plus.png");
     }
     
+    /**
+     * @param : (pre) A fontUp object already exists
+     * @param : (post) Increases the font size by 5.
+     * @return : None
+     */
     public void increaseFont()
     {
         ClockWorld worldClock = (ClockWorld) getWorld();
