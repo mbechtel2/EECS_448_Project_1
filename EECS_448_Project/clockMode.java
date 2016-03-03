@@ -39,6 +39,8 @@ public class clockMode extends ClockMenu
         
         if (Greenfoot.mouseClicked(this))
         {
+            worldClock.mDsp.changeImage("Clock");
+            
             myClock.resetClock(worldClock.tempClock);
             myClock.clockMode = true;
             myClock.stopwatchMode = false;

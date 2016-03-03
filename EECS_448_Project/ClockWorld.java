@@ -27,6 +27,7 @@ public class ClockWorld extends World
     clockMode clkMode = new clockMode();
     fontUp fntUp = new fontUp();
     fontDown fntDown = new fontDown();
+    modeDisplay mDsp = new modeDisplay();
     
     public boolean displayOn;
     private int fontSize = 95;
@@ -91,10 +92,12 @@ public class ClockWorld extends World
         
         //add on/off display button
         addObject(dsp, 525, 30);
+        addObject(mDsp, 85, 25);
         
         //add font up and down buttons
         addObject(fntUp, 500, 165);
         addObject(fntDown, 550, 165);
+        
     }
     
     /** 

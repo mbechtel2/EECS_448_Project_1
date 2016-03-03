@@ -43,6 +43,7 @@ public class timer extends ClockMenu
             {
                 worldClock.tempClock = myClock.createTempClock();
             }
+            worldClock.mDsp.changeImage("Timer");
             
             myClock.m_timeUpperBound = 24;
             myClock.clockMode = false;

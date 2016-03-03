@@ -43,6 +43,7 @@ public class stopwatch extends ClockMenu
             {
                 worldClock.tempClock = myClock.createTempClock();
             }
+            worldClock.mDsp.changeImage("Stopwatch");
             
             myClock.m_timeUpperBound = 24;
             myClock.clockMode = false;

@@ -13,7 +13,7 @@ public class date extends ClockMenu
     public int month = 0;
     public int monthIndex = 0;
     public String[] days = {"Friday","Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
-    public String[] months = {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"};
+    public String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     public int[] daysInAMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     /**
@@ -59,10 +59,7 @@ public class date extends ClockMenu
     {
         if(day == daysInAMonth[monthIndex] - 1 && monthIndex >= 11)
         {
-            tempDay = 0;
-            monthIndex = 0;
-            month = 0;
-            day = 0;
+            //do nothing
         }
         else if(day == daysInAMonth[monthIndex] - 1)
         {
@@ -98,7 +95,7 @@ public class date extends ClockMenu
             monthIndex--;
             month--;
             day = daysInAMonth[month] - 1;
-        }        
+        }    
         this.setImage(new GreenfootImage("Date: " + this.getDayName() + " " + this.getMonth() + " " + this.getDay(), 35, null, null));
     }
     
