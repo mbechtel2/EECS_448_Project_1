@@ -40,6 +40,8 @@ public class fontDown extends ClockMenu
         {
             int temp = worldClock.getFontSize() - 5;
             worldClock.setFontSize(temp);
+            
+            worldClock.fSize.changeImage(temp);
         }
     }
 }

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Mar 03 14:29:19 CST 2016
+#Thu Mar 03 15:00:05 CST 2016
 target16.name=fontUp
 dependency35.to=date
 editor.swing.0.y=-8
@@ -267,6 +267,7 @@ class.hourLabel.image=hour.png
 target10.typeParameters=
 target8.typeParameters=
 dependency12.to=Clock
+class.fontSize.superclass=ClockMenu
 dependency4.type=UsesDependency
 dependency1.from=ClockWorld
 target22.showInterface=false

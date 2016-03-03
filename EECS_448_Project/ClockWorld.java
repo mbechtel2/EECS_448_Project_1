@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.Font;
 
 /**
  * ClockWorld is the world containing the components of the digital clock
@@ -28,6 +29,7 @@ public class ClockWorld extends World
     fontUp fntUp = new fontUp();
     fontDown fntDown = new fontDown();
     modeDisplay mDsp = new modeDisplay();
+    fontSize fSize = new fontSize();
     
     public boolean displayOn;
     private int fontSize = 95;
@@ -49,6 +51,7 @@ public class ClockWorld extends World
         if(displayOn)
         {
             mainClock.setImage(new GreenfootImage(mainClock.getTime()[0] + " : 0" + mainClock.getTime()[1] + " : 0" + mainClock.getTime()[2]+ " " + mainClock.getAM(), fontSize, null, null));
+            
         }
         else
         {
@@ -97,6 +100,8 @@ public class ClockWorld extends World
         //add font up and down buttons
         addObject(fntUp, 500, 165);
         addObject(fntDown, 550, 165);
+        addObject(fSize, 325, 165);
+        
         
     }
     

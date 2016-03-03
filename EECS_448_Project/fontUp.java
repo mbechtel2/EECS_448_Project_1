@@ -40,6 +40,7 @@ public class fontUp extends ClockMenu
         {
             int temp = worldClock.getFontSize() + 5;
             worldClock.setFontSize(temp);
+            worldClock.fSize.changeImage(temp);
         }
     }
 }

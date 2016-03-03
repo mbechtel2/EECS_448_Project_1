@@ -12,7 +12,7 @@ public class date extends ClockMenu
     public int tempDay = 0;
     public int month = 0;
     public int monthIndex = 0;
-    public String[] days = {"Friday","Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
+    public String[] days = {"Fri","Sat", "Sun", "Mon", "Tue", "Wed", "Thu"};
     public String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     public int[] daysInAMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
