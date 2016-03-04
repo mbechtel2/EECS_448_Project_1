@@ -24,7 +24,7 @@ public class dateUp extends ClockMenu
      */
     public dateUp()
     {
-        setImage("plus.png");
+        setImage("plus_grey.png");
     }
     
     /**

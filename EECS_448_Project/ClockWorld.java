@@ -66,7 +66,7 @@ public class ClockWorld extends World
         
         //add date display
         addObject(dte, 225, 330);
-        addObject(dteUp, 470, 330);
+        addObject(dteUp, 470, 331);
         addObject(dteDown, 520, 330);
         
         //add 12/24 hour toggle button

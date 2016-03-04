@@ -49,7 +49,7 @@ public class secondReset extends ClockMenu
                 myClock.resetSec();
                 myClock.resetMin();
                 myClock.resetHour();
-                //myClock.startCycle = false;
+                myClock.startCycle = false;
             }
             else if(myClock.timerMode == true)
             {
