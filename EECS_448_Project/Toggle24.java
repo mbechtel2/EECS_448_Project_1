@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Toggles the clock between 12- and 24- hour modes
  * 
- * @author Will Teeple
- * @version 1.2
+ * @author Will Teeple, Shane Chu
+ * @version 1.3
  */
 public class Toggle24 extends ClockMenu
 {

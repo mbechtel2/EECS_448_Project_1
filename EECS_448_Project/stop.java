@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Used to pause the stopwatch or timer.
  * 
- * @author Michael Bechtel
- * @version 0
+ * @author Michael Bechtel, Shane Chu
+ * @version 1.1
  */
 public class stop extends ClockMenu
 {

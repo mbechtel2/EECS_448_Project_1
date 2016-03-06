@@ -3,6 +3,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Used to increase the font of the displayed numbers.
  * 
+ * Citation for image used: plus/minus sign:
+ * http://worldartsme.com/minus/?order=downloads 
+ * 
  * @author Michael Bechtel
  * @version 1.0
  */

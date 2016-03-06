@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=dateUp
-comment0.text=\r\n\ Used\ to\ move\ the\ date\ forward,\ one\ day\ at\ a\ time.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
+comment0.text=\r\n\ Used\ to\ move\ the\ date\ forward,\ one\ day\ at\ a\ time.\r\n\ \r\n\ Citation\ for\ image\ used\:\ plus/minus\ sign\:\r\n\ http\://worldartsme.com/minus/?order\=downloads\ \r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ dateUp\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

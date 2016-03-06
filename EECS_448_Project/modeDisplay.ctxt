@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=modeDisplay
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ modeDisplay\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ display\ the\ current\ mode\ to\ the\ user\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ modeDisplay\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=modeDisplay()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ modeDisplay\ with\ an\ image\ initialzed\ to\ "Clock"\r\n\ @return\ \:\ None\r\n
 comment3.params=newMode
 comment3.target=void\ changeImage(java.lang.String)
+comment3.text=\r\n\ @param\ \:\ (newMode)\ String\ that\ the\ object's\ image\ will\ change\ two\r\n\ @param\ \:\ (pre)\ Both\ clock\ and\ modeDisplay\ objects\ exist\r\n\ @param\ \:\ (post)\ Changes\ this\ object's\ string\ image\ to\ match\ the\ parameter\ string\r\n\ @return\ \:\ None\r\n
 numComments=4

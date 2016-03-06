@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=timer
-comment0.text=\r\n\ Used\ to\ change\ the\ mode\ to\ Timer\ mode.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
+comment0.text=\r\n\ Used\ to\ change\ the\ mode\ to\ Timer\ mode.\r\n\ \r\n\ @author\ Michael\ Bechtel,\ Shane\ Chu\r\n\ @version\ 1.1\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ timer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

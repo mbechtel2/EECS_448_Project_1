@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Used to turn the display on and off
  * 
- * @author Michael Bechtel
- * @version 1.0
+ * @author Michael Bechtel, Shane Chu
+ * @version 1.1
  */
 public class display extends ClockMenu
 {

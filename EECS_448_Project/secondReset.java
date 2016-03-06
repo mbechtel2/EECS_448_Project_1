@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Citation for image used: reset button:
  * http://optimus5.com/index.php?page=search/images&search=restart+button&type=images
  * 
- * @author Will Teeple, Michael Bechtel
- * @version 1.3
+ * @author Will Teeple, Michael Bechtel, Dustin Wendt
+ * @version 1.4
  */
 public class secondReset extends ClockMenu
 {

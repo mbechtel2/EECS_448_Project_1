@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=fontSize
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ fontSize\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Used\ to\ display\ the\ current\ font\ size\ of\ the\ clock\ to\ the\ user.\r\n\ \r\n\ @author\ Michael\ Bechtel\r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ fontSize\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=fontSize()
+comment2.text=\r\n\ @param\ \:\ (pre)\ None\r\n\ @param\ \:\ (post)\ Creates\ a\ new\ object\ of\ type\ fontSize\ with\ image\ initialzed\ to\ "Current\ Font\ Size\:\ 95"\r\n\ @return\ \:\ None\r\n
 comment3.params=newSize
 comment3.target=void\ changeImage(int)
+comment3.text=\r\n\ @param\:\ (newSize)\ Integer\ that\ will\ become\ the\ new\ font\ size\r\n\ @param\ \:\ (pre)\ A\ fontSize\ object\ already\ exists\r\n\ @param\ \:\ (post)\ The\ Clock's\ font\ size\ will\ change\ to\ match\ the\ parameter\r\n\ @return\ \:\ None\r\n
 numComments=4

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class fontSize here.
+ * Used to display the current font size of the clock to the user.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Bechtel
+ * @version 1.0
  */
 public class fontSize extends ClockMenu
 {
@@ -19,12 +19,22 @@ public class fontSize extends ClockMenu
         // Add your action code here.
     }  
     
+    /**
+     * @param : (pre) None
+     * @param : (post) Creates a new object of type fontSize with image initialzed to "Current Font Size: 95"
+     * @return : None
+     */
     public fontSize()
     { 
-        
         setImage(new GreenfootImage("Current font size: " + currentSize, 35, null, null));
     }
     
+    /**
+     * @param: (newSize) Integer that will become the new font size
+     * @param : (pre) A fontSize object already exists
+     * @param : (post) The Clock's font size will change to match the parameter
+     * @return : None
+     */
     public void changeImage(int newSize)
     {
         currentSize = newSize;

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Used to start the stopwatch and timer.
  * 
- * @author Michael Bechtel
- * @version 1.0
+ * @author Michael Bechtel, Shane Chu
+ * @version 1.1
  */
 public class start extends ClockMenu
 {

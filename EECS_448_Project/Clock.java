@@ -10,8 +10,8 @@ import java.util.Scanner;
  * Main class for the Clock object. Contains methods for displaying and setting the clock and switching between modes.
  *
  * @file : Clock.java
- * @author : Michael Wang and William Teeple
- * @version : 1.2
+ * @author : Michael Wang, William Teeple, Michael Bechtel, Dustin Wendt
+ * @version : 1.4
  */
 
 //**********************************************************
