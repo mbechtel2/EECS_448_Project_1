@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * Main class for the Clock object. Contains methods for displaying and setting the clock and switching between modes.
- * 
+ *
  * @file : Clock.java
  * @author : Michael Wang and William Teeple
  * @version : 1.2
@@ -21,7 +21,7 @@ import java.util.Scanner;
 // Author: Michael Wang (Edited by Will Teeple)
 //
 // Date: 02/03/2016
-//********************************************************* 
+//*********************************************************
 
 public class Clock extends Actor
 {
@@ -45,19 +45,19 @@ public class Clock extends Actor
      * Act - do whatever the Clock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
-      ClockWorld worldClock = (ClockWorld) getWorld(); 
+      ClockWorld worldClock = (ClockWorld) getWorld();
       Clock tempClk = worldClock.tempClock;
-              
+
       if(clockMode)
       {
           this.calculateTime();
       }
       else if(stopwatchMode)
-      {        
+      {
           tempClk.calculateTime();
-          
+
           if(startCycle)
           {
               this.calculateTime();
@@ -66,13 +66,13 @@ public class Clock extends Actor
       else if(timerMode && startCycle)
       {
           tempClk.calculateTime();
-          
+
           if(startCycle)
           {
               this.decrementTime();
           }
         }
-        
+
       if (get24Hour() == false && worldClock.displayOn)
         {
             if (m_hour < 10)
@@ -183,12 +183,12 @@ public class Clock extends Actor
       {
           setImage(new GreenfootImage("", worldClock.getFontSize(), null, null));
       }
-   }    
+   }
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
     /**
      * Clock constructor, sets time to 12:00:00 AM
-     * 
+     *
      * @param : (pre) None
      * @param  : (post) Creates a new object of type Clock with default time 12:00:00
      * @return : None
@@ -197,10 +197,10 @@ public class Clock extends Actor
     {
         setTime(12, 0, 0);
     }
-    
+
     /**
      * Clock Constructor, sets time according to input arguments.
-     * 
+     *
      * @param : (pre) None
      * @param : (post) Creates a new Clock object with the time corresponding to input arguments
      * @return : None
@@ -208,11 +208,11 @@ public class Clock extends Actor
     public Clock(int hours, int minutes, int seconds)
     {
         setTime(hours, minutes, seconds);
-    }  
+    }
 
     /**
      * Returns the current time of the clock.
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) None
      * @return : Returns the current time in an array
@@ -221,11 +221,11 @@ public class Clock extends Actor
     {
         int[] time = {m_hour, m_minute, m_second};
         return time;
-    }  
+    }
 
     /**
      * Sets the current time of the clock.
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Sets the current time of the clock
      * @return : None
@@ -239,7 +239,7 @@ public class Clock extends Actor
 
     /**
      * Sets the clock to either 12- or 24 hour mode.
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Sets the clock to 24- hour mode if true, 12- hour mode if false
      * @return : None
@@ -255,14 +255,14 @@ public class Clock extends Actor
                 {
                     m_hour += 12;
                 }
-            }    
+            }
             else
             {
                 if (m_hour == 12)
                 {
                     m_hour = 0;
                 }
-            }            
+            }
             m_timeOfDay = "";
             m_timeZone = false;
         }
@@ -296,7 +296,7 @@ public class Clock extends Actor
 
     /**
      * Returns a boolean value corresponding to the current 'mode'
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) None
      * @return : Returns true if the clock is in 24- hour mode, false otherwise
@@ -315,7 +315,7 @@ public class Clock extends Actor
 
     /**
      * Sets the clock to be either AM or PM
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Sets the clock to AM/PM, AM if true, PM if false
      * @return : None
@@ -338,7 +338,7 @@ public class Clock extends Actor
 
     /**
      * Returns a boolean value corresponding to either AM or PM
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) None
      * @return : Returns true if the clock is set to AM, false otherwise
@@ -350,13 +350,13 @@ public class Clock extends Actor
 
     /**
      * Increments or decrements the hour depending on the input argument
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Changes the clock hour, increments if argument is true, decrements if argument is false
      * @return : None
      */
     public void changeHour(boolean up)
-    {      
+    {
         if (up == true)
         {
             if (get24Hour() == true)
@@ -379,14 +379,14 @@ public class Clock extends Actor
                         m_hour += 1;
                         isAM(!m_timeZone);
                     }
-                    else 
+                    else
                     {
                         m_hour += 1;
                     }
                 }
                 else
                 {
-                    m_hour = 1;                    
+                    m_hour = 1;
                 }
             }
         }
@@ -426,7 +426,7 @@ public class Clock extends Actor
 
     /**
      * Increments or decrements the minute depending on the input argument
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Changes the clock minute, increments if argument is true, decrements if argument is false
      * @return : None
@@ -463,7 +463,7 @@ public class Clock extends Actor
 
     /**
      * Resets the second count to zero
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Resets the value of the clock's second variable to zero
      * @return : None
@@ -473,13 +473,13 @@ public class Clock extends Actor
         m_second = 0;
         startTime = System.currentTimeMillis();
     }
-    
+
     public void resetMin()
     {
         m_minute = 0;
         startTime = System.currentTimeMillis();
     }
-    
+
     public void resetHour()
     {
         m_hour = 0;
@@ -488,17 +488,17 @@ public class Clock extends Actor
 
     /**
      * Updates the time of the clock appropriately, incrementing minutes/hours when necessary
-     * 
+     *
      * @param : (pre) Existing Clock object
      * @param : (post) Increments the second variable every 1000 ms, and updates all other time variables as necessary
      * @return : None
      */
     public void calculateTime()//this calculates the time for the clock
     {
-        ClockWorld worldClock = (ClockWorld) getWorld(); 
+        ClockWorld worldClock = (ClockWorld) getWorld();
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
-        
-        if (timeNow >= 100)
+
+        if (timeNow >= 1000)
         {
             timeNow = 0;
             startTime = System.currentTimeMillis();
@@ -563,7 +563,7 @@ public class Clock extends Actor
 
         this.isAM(m_timeZone);
     }
-    
+
     /**
      * @param : (pre) A clock object already exists
      * @param : (post) None
@@ -574,10 +574,10 @@ public class Clock extends Actor
         int hours = m_hour * 3600;
         int minutes = m_minute * 60;
         int seconds = hours + minutes + m_second;
-        
+
         return seconds;
     }
-    
+
     /**
      * @param : (pre) A clock object already exists
      * @param : (post) Decreases the time by one second
@@ -585,9 +585,9 @@ public class Clock extends Actor
      */
     public void decrementTime()
     {
-        ClockWorld worldClock = (ClockWorld) getWorld(); 
+        ClockWorld worldClock = (ClockWorld) getWorld();
         timeNow = System.currentTimeMillis() - startTime; //time passed since last snapshot
-        
+
         if (timeNow >= 1000 && m_hour >= 0)
         {
             timeNow = 0;
@@ -607,9 +607,9 @@ public class Clock extends Actor
         timeNow = System.currentTimeMillis();
         }
          */
-        
-        
-        
+
+
+
         if(m_second < 0)
         {
             m_second = 59;
@@ -657,7 +657,7 @@ public class Clock extends Actor
 
         this.isAM(m_timeZone);
     }
-    
+
     /**
      * @param : (pre) A clock object already exists
      * @param : (post) A copy of the current clock object will be created
@@ -671,21 +671,20 @@ public class Clock extends Actor
         tempClock.m_second = this.m_second;
         tempClock.m_timeUpperBound = this.m_timeUpperBound;
         tempClock.isMainClock = false;
-        
+
         return tempClock;
     }
-    
+
     /**
      * @param : (pre) Two clock objects exits
      * @param : (post) The current Clock object will resemble the Clock object passed as a parameter
      * @return : None
      */
     public void resetClock(Clock temp)
-    {        
+    {
         this.m_hour = temp.m_hour;
         this.m_minute = temp.m_minute;
         this.m_second = temp.m_second;
         this.m_timeUpperBound = temp.m_timeUpperBound;
     }
 }
-
