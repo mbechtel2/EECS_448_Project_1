@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Used to display the current font size of the clock to the user.
  * 
  * @author Michael Bechtel
- * @version 1.0
+ * @version 1.1
  */
 public class fontSize extends ClockMenu
 {

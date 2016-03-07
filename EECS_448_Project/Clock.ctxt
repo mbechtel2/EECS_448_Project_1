@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Clock
-comment0.text=\r\n\ Main\ class\ for\ the\ Clock\ object.\ Contains\ methods\ for\ displaying\ and\ setting\ the\ clock\ and\ switching\ between\ modes.\r\n\r\n\ @file\ \:\ Clock.java\r\n\ @author\ \:\ Michael\ Wang,\ William\ Teeple,\ Michael\ Bechtel,\ Dustin\ Wendt\r\n\ @version\ \:\ 1.4\r\n
+comment0.text=\r\n\ Main\ class\ for\ the\ Clock\ object.\ Contains\ methods\ for\ displaying\ and\ setting\ the\ clock\ and\ switching\ between\ modes.\r\n\r\n\ @file\ \:\ Clock.java\r\n\ @author\ \:\ Michael\ Wang,\ William\ Teeple,\ Michael\ Bechtel,\ Dustin\ Wendt,\ Diego\ Soliz,\ Shane\ Chu,\ Connor\ Welsh\r\n\ @version\ \:\ 1.4\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Clock\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

@@ -6,8 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Citation for image used: plus/minus sign:
  * http://worldartsme.com/minus/?order=downloads     
  * 
- * @author Will Teeple
- * @version 1.2
+ * @author Will Teeple, Michael Bechtel
+ * @version 1.3
  */
 public class hourUp extends ClockMenu
 {
@@ -40,7 +40,7 @@ public class hourUp extends ClockMenu
         ClockWorld worldClock = (ClockWorld) getWorld();
         Clock myClock = worldClock.getClock();
         
-        if (Greenfoot.mouseClicked(this))
+        if (Greenfoot.mouseClicked(this) && (myClock.clockMode || myClock.timerMode))
         {
             myClock.changeHour(true);
         }

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Keeps track of the date and allows the user to change it
  * 
  * @author Michael Bechtel
- * @version 1.0
+ * @version 1.2
  */
 public class date extends ClockMenu
 {

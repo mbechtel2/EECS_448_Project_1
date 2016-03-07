@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Toggles the clock between 12- and 24- hour modes
  * 
- * @author Will Teeple, Shane Chu
- * @version 1.3
+ * @author Will Teeple, Shane Chu, Michael Bechtel
+ * @version 1.4
  */
 public class Toggle24 extends ClockMenu
 {
@@ -37,7 +37,7 @@ public class Toggle24 extends ClockMenu
         ClockWorld worldClock = (ClockWorld) getWorld();
         Clock myClock = worldClock.getClock();
         
-        if (Greenfoot.mouseClicked(this))
+        if (Greenfoot.mouseClicked(this) && myClock.clockMode)
         {
             if (myClock.get24Hour() == true)
             {
